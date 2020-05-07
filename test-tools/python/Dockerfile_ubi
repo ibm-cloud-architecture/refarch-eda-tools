@@ -1,0 +1,14 @@
+# In order to build the docker image out of this file:
+#   1. Rename the file to Dockerfile --> cp docker-python-tools Dockerfile
+#   2. Build the Dockerfile --> docker build -t "ibmcase-python:test" <path_to_this_file>
+
+FROM registry.access.redhat.com/ubi8/python-36
+
+RUN pip install --upgrade pip \
+    && pip install pipenv requests black pytest numpy pandas confluent_kafka asyncio flask
+
+ENV PYTHONPATH=/tmp
+
+COPY data /tmp/data
+COPY kafka /tmp/kafka
+COPY PerfConsumer.py ProducerPerformance.py /tmp/
