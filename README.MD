@@ -2,26 +2,33 @@
 
 ## Latency measurement
 
-To measure latency we need to get the timestamp of the input record at the first topic and the timestamp at the record from the last topic topic, with the same key and see the difference for each message, and average it.
-
-When producer write code to kafka the record has a timestamp at the creation time. The topic can be configured to use the time of the append log time. If we need to measure the latency we need to have the TS0 or TS1 propagated to the end topic or use a consumer that poll from the first topic and the last topic in the kafka streams chain. Here is an example of such timestamps in the context of kafka streaming:
+To measure latency we need to get the timestamp of the input record at the first topic and the timestamp at the record from the last topic. The following diagram presents the different timestamps and latency goals we want to measure:
 
 ![1](docs/images/streams-ts.png)
 
-* TS1: is a timestamp added to the record payload or the ProducerRecord timestamp attribute.
-* TS2: is the append log time stamp, on input topic,  when the topic configuration is done this way, or the ProducerRecord timestamp attribute
+* TS1: is a timestamp added to the record creation time. If the user did not provide a timestamp, the producer will stamp the record with its current time. The timestamp eventually used by Kafka depends on the timestamp type configured for the topic. If the topic is configured to use `CreateTime`, the timestamp in the producer record will be used by the broker. If the topic is configured to use `LogAppendTime`, the timestamp in the producer record will be overwritten by the broker with the broker local time when it appends the message to its log.
+* TS2: is available only if the input topic uses the append log time stamp, or it will be TS1 otherwise.
 * TS3: is the append log time stamp, on last output topic
-* TS4: is a time stamp at runtime around the poll method of the consumer code.
+* TS4: is a time stamp at runtime around the poll method of the consumer code. This may not be a relevant timestamp if we focus just on the delivery to topic.TS4-TS3 is really dependant of the consumer runtime processing a loading logic: for example a records in the topic could have been persisted with a timestamp of two days ago, the consumer will load it and see a latency of two days. For performance testing we encourage to start the consumer before the producer and load from the latest offset, be part of its unique consumer group, and auto commit read offset.
 
-And in the case of data replication between data centers with MirrorMaker 2, the timestamps have the same meaning but developer has less control on managing the timestamps. 
+It is important to agree on what is the expected latency to measure: arrow 1 or 2 in previous figure. The difference between TS3 and TS4 is variable and depends on when the consumer starts and the processing done. So the relevant latency measures could be (TS3 - TS1) or (TS3 - TS2).
 
-![2](docs/images/mm2-ts-test.png)
+If we need to measure the latency we need to have the TS1 or TS2 timestamp propagated to the last output topic or configure the consumer to poll from the first topic and the last topic and use a correlationID to compute the latency.
 
-To measure latency between TS2 and TS3 we need to get a consumer that polls from both topic, or TS1 = TS2 and is injected by the producer in the payload. 
+![2](docs/images/perf-ts-consumer.png)
 
-Those timestamps are per message, so a performance monitoring tool needs to keep measurement per message. The injection of a correlation ID is needed to get an latency view per message. The consumer may includes multiple consumers or one that listen to all topic/partition, as the goal is to aggregate the min, max, average measured latency.
+As an alternate the TS1 needs to be in the payload:
 
-![3](docs/images/distributed-measures.png)
+![3](docs/images/perf-ts-consumer2.png)
+
+Finally in the case of data replication between data centers using tool like MirrorMaker 2, the timestamps have the same meaning but developer has less control on managing the timestamps. 
+
+![3](docs/images/mm2-ts-test.png)
+
+To measure latency between TS2 and TS3 we need to get a consumer to poll from both topics in different cluster, or use TS1 = TS2 and has to be injected by the producer in the payload.
+
+Those timestamps are per message, so a performance monitoring tool needs to keep measurement per message. The injection of a correlation ID is needed to get a latency view per message. The consumer may includes multiple consumers or one that listen to all topic/partitions from the output topic, as the goal is to aggregate the min, max, average measured latency.
+
 
 ## Kafka performance considerations
 
@@ -50,13 +57,22 @@ For the producer the following parameters impact throughtput and latency:
 
 [See producer configuration from Kafka doc](https://kafka.apache.org/documentation/#producerconfigs)
 
-### Consumer
-
-Size of the poll duration.
-
 ### Kafka streams
 
-Kafka streams ensure exactly once semantics, so this means the following configuration:
+Kafka streams ensures exactly once semantics, so this add to latency quite significently. This means the following configuration is used:
+
+* Acknowledge All
+* Replicas 3 with in-synch replicas 2
+* Idempotence is set to true
+* The number of in-flight request per connection is 1
+* As producer write to topic with multiple partition in the same batch, all records are saved or none are.
+* When consuming messages, only committed messages are polled.
+
+Do not expect linear scaling with chained kafka streams operations/process.
+
+### Schema registry
+
+When using AVRO schema for the payload, verify the producer and consumer cache the schema definition once read from the registry: round trip to get the message will cost time.
 
 ## Simple test framework
 
