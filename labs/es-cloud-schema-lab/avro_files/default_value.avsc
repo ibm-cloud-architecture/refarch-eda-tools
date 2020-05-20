@@ -1,0 +1,18 @@
+{   
+    "namespace": "ibm.eda.default",
+    "doc": "Default Message's value Avro data schema, composed of the key again and any string message",
+    "type":"record",
+    "name":"defaultValue",
+    "fields":[
+            {
+                "name": "eventKey",
+                "type":"string",
+                "doc": "We expect any string as the event key"
+            }, 
+            {
+                "name": "message",
+                "type":"string",
+                "doc": "Any string message"
+            }
+     ]
+}

@@ -1,0 +1,5 @@
+{
+    "namespace": "ibm.eda.default",
+    "name": "defaultKey",
+    "type": "string"
+}
