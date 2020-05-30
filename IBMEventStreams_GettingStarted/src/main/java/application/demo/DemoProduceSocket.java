@@ -16,8 +16,8 @@ package application.demo;
 import java.io.IOException;
 import java.io.StringReader;
 import java.net.ConnectException;
-import java.util.concurrent.ExecutionException;
 import java.util.Random;
+import java.util.concurrent.ExecutionException;
 
 import javax.json.Json;
 import javax.json.JsonException;
@@ -37,9 +37,8 @@ import org.apache.kafka.clients.producer.RecordMetadata;
 import org.apache.kafka.common.KafkaException;
 import org.apache.log4j.Logger;
 
-import application.demo.RecordDataEncoder;
+import application.kafka.KafkaConfig;
 import application.kafka.Producer;
-import application.demo.RecordData;
 
 @ServerEndpoint(value = "/demoproduce", encoders = {RecordDataEncoder.class})
 public class DemoProduceSocket {
@@ -51,19 +50,15 @@ public class DemoProduceSocket {
 
     private Logger logger = Logger.getLogger(DemoProduceSocket.class);
 
-    private final String BOOTSTRAP_SERVER_ENV_KEY = "BOOTSTRAP_SERVER";
-    private final String TOPIC_ENV_KEY = "TOPIC";
-
     private String topic;
 
     @OnOpen
     public void onOpen(Session session, EndpointConfig endpointConfig) {
         logger.debug(String.format("Socket opened with id %s", session.getId()));
         currentSession = session;
-        String bootstrapServerAddress = System.getenv(BOOTSTRAP_SERVER_ENV_KEY).replace("\"", "");
-        topic = System.getenv(TOPIC_ENV_KEY).replace("\"", "");
+        topic = KafkaConfig.getInstance().getTopicName();
         try {
-            producer = new Producer(bootstrapServerAddress, topic);
+            producer = new Producer();
         } catch(InstantiationException e) {
             onError(e);
         }

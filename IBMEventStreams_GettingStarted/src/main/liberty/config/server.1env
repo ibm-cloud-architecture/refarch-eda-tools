@@ -1,5 +1,0 @@
-TOPIC="getstarted"
-BOOTSTRAP_SERVER="eventstreams-cp4i-ibm-es-proxy-route-broker-0-eventstreams-cp4i.gse-eda-demo-202005-fa9ee67c9ab6a7791435450358e564cc-0000.us-south.containers.appdomain.cloud:443"
-CONSUMER_API_KEY="q1kGhGZQo7iXfC6Rb5IJtQncFIfDHiDgIOrDqXRj-FsY"
-PRODUCER_API_KEY="Kgb7J1gEovCepeTqt98uWiWUHmyYUxDdE6_vm7BWkooa"
-USE_TLS=True

@@ -1,3 +1,7 @@
 .DS_Store
 *.pyc
 IBMEventStreams_GettingStarted/target/
+test-tools/perf-producer-app/target/
+IBMEventStreams_GettingStarted/src/main/liberty/config/server.env
+IBMEventStreams_GettingStarted/src/main/liberty/config/resources/security/
+

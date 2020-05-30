@@ -45,9 +45,6 @@ import application.kafka.Consumer;
 @ServerEndpoint(value = "/democonsume", encoders = { DemoMessageEncoder.class })
 public class DemoConsumeSocket {
 
-    private final String BOOTSTRAP_SERVER_ENV_KEY = "BOOTSTRAP_SERVER";
-    private final String TOPIC_ENV_KEY = "TOPIC";
-
     private Session currentSession = null;
     private Consumer consumer = null;
 
@@ -62,10 +59,8 @@ public class DemoConsumeSocket {
     public void onOpen(Session session, EndpointConfig endpointConfig) {
         logger.debug(String.format("Socket opened with id %s", session.getId()));
         currentSession = session;
-        String bootstrapServerAddress = System.getenv(BOOTSTRAP_SERVER_ENV_KEY).replace("\"", "");
-        String topic = System.getenv(TOPIC_ENV_KEY).replace("\"", "");
         try {
-            consumer = new Consumer(bootstrapServerAddress, topic);
+            consumer = new Consumer();
         } catch (InstantiationException e) {
             onError(e);
         }

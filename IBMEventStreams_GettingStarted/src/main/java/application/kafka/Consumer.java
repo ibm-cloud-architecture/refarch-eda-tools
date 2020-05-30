@@ -5,14 +5,9 @@ import java.util.Arrays;
 import java.util.Properties;
 import java.util.UUID;
 
-import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.apache.kafka.clients.CommonClientConfigs;
-import org.apache.kafka.clients.consumer.ConsumerConfig;
-import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
+import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.KafkaException;
-import org.apache.kafka.common.config.SaslConfigs;
-import org.apache.kafka.common.config.SslConfigs;
 import org.apache.log4j.Logger;
 
 public class Consumer {
@@ -21,8 +16,6 @@ public class Consumer {
     private final String APP_NAME = "GettingStarted";
     private final String DEFAULT = "DEFAULT";
     private final long POLL_DURATION = 1000;
-    private final String USERNAME = "token";
-    private final String API_KEY = System.getenv("CONSUMER_API_KEY");
 
     private String consumerGroupId;
     private KafkaConsumer<String, String> kafkaConsumer;
@@ -31,40 +24,36 @@ public class Consumer {
 
 
     public Consumer(String bootstrapServerAddress, String topic) throws InstantiationException {
-        setOrGenerateConsumerGroupId();
-
         if (topic == null) {
             throw new InstantiationException("Missing required topic name.");
         } else if (bootstrapServerAddress == null) {
             throw new InstantiationException("Missing required bootstrap server address.");
         }
+        KafkaConfig.getInstance().setBootstrapServerAddress(bootstrapServerAddress);
+        KafkaConfig.getInstance().setTopicName(topic);
+        init();
+    }
+
+    public Consumer() throws InstantiationException {
+        init();
+    }
+
+    private void init() throws InstantiationException {
+        setOrGenerateConsumerGroupId();
         try {
-            kafkaConsumer = createConsumer(bootstrapServerAddress);
+            kafkaConsumer = createConsumer();
         } catch (KafkaException e) {
             throw new InstantiationException(e.getMessage());
         }
-        kafkaConsumer.subscribe(Arrays.asList(topic));
+        kafkaConsumer.subscribe(Arrays.asList( KafkaConfig.getInstance().getTopicName()));
+     
     }
 
-    private KafkaConsumer<String, String> createConsumer(String brokerList) {
+    private KafkaConsumer<String, String> createConsumer() throws InstantiationException {
 
-        Properties properties = new Properties();
-        properties.put(CommonClientConfigs.BOOTSTRAP_SERVERS_CONFIG, brokerList);
-        properties.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, "SASL_SSL");
-        properties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-        properties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-        properties.put(ConsumerConfig.GROUP_ID_CONFIG, consumerGroupId);
-        properties.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
-        properties.put(SslConfigs.SSL_PROTOCOL_CONFIG, "TLSv1.2");
-        if (Boolean.parseBoolean(System.getenv("USE_TLS"))) {
-            properties.put(SslConfigs.SSL_TRUSTSTORE_LOCATION_CONFIG, "resources/security/certs.jks");
-            properties.put(SslConfigs.SSL_TRUSTSTORE_PASSWORD_CONFIG, "password");
-        }
-        properties.put(SaslConfigs.SASL_MECHANISM, "PLAIN");
-        String saslJaasConfig = "org.apache.kafka.common.security.plain.PlainLoginModule required username=\""
-            + USERNAME + "\" password=" + API_KEY + ";";
-        properties.put(SaslConfigs.SASL_JAAS_CONFIG, saslJaasConfig);
-
+        Properties properties = KafkaConfig.getInstance().buildConsumerProperties(
+                System.getenv("CONSUMER_API_KEY"),
+                consumerGroupId);
         KafkaConsumer<String, String> kafkaConsumer = null;
 
         try {
