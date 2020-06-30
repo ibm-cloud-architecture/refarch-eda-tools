@@ -1,0 +1,14 @@
+{   
+    "namespace": "ibm.eda.default",
+    "doc": "Default Message's value Avro data schema",
+    "type":"record",
+    "name":"defaultValue",
+    "fields":[
+            {
+                "name": "anotherAttribute",
+                "type":"string",
+                "doc": "Any string",
+                "default": "This is the default string"
+            }
+     ]
+}

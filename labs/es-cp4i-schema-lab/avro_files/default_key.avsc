@@ -1,0 +1,13 @@
+{   
+    "namespace": "ibm.eda.default",
+    "doc": "Default Message's key Avro data schema",
+    "type":"record",
+    "name":"defaultKey",
+    "fields":[
+            {
+                "name": "key",
+                "type":"int",
+                "doc": "We expect any int as the event key"
+            }
+     ]
+}
