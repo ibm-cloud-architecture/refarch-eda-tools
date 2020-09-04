@@ -5,3 +5,7 @@ test-tools/perf-producer-app/target/
 IBMEventStreams_GettingStarted/src/main/liberty/config/server.env
 IBMEventStreams_GettingStarted/src/main/liberty/config/resources/security/
 
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
