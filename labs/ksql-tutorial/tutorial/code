@@ -1,0 +1,89 @@
+// create STREAM
+CREATE STREAM Telemetry_event (
+    containerID VARCHAR KEY,
+    payload STRUCT<
+        container_id VARCHAR,
+        measurement_time VARCHAR,
+        product_id VARCHAR,
+        temperature DOUBLE(5,2),
+        target_temperature DOUBLE(5,2), 
+        ambiant_temperature DOUBLE(5,2), 
+        kilowatts DOUBLE(5,2), 
+        time_door_open DOUBLE(5,2),
+        content_type INT, 
+        defrost_cycle INT,
+        oxygen_level DOUBLE(5,2),
+        nitrogen_level DOUBLE(5,2), 
+        humidity_level DOUBLE(5,2),
+        target_humidity_level DOUBLE(5,2),
+        carbon_dioxide_level DOUBLE(5,2), 
+        fan_1 BOOLEAN, 
+        fan_2 BOOLEAN,
+        fan_3 BOOLEAN,
+        latitude DOUBLE(5,2),
+        longitude DOUBLE(5,2),
+        maintenance_required INT
+    >,
+    timestamp VARCHAR,
+    type VARCHAR
+) WITH (
+    kafka_topic = 'ksql_refarcTopic',
+    partitions = 2,
+    value_format = 'json',
+    timestamp = 'timestamp',
+    timestamp_format = 'yyyy-MM-dd''T''HH:mm:ss'
+);
+
+// create containertracker table
+CREATE TABLE containerTracker AS
+    SELECT containerID, latest_by_offset(payload->target_temperature) AS `max_temperature`,
+           5 AS `max_violation_allowed`,
+           false AS `violated`,
+           latest_by_offset(payload->temperature) AS latestTemperature,
+           collect_list(payload->temperature) AS TEMPERATURE_LIST
+    FROM Telemetry_event
+    WHERE payload->temperature > payload->target_temperature
+    GROUP BY containerID
+    EMIT CHANGES;
+
+// get all changes received to containertacker
+select * from containerTracker emit changes;
+
+// insert data to Telemetry_event
+INSERT INTO Telemetry_event (
+    containerID, payload, timestamp, type
+) VALUES (
+    'container_ID-4321',
+    STRUCT(
+        container_id := 'container_ID-4321',
+        measurement_time := 'measurement_time',
+        product_id := 'prod_ID',
+        temperature := 101,
+        target_temperature := -9.0, 
+        ambiant_temperature := 5.0, 
+        kilowatts := 1.2, 
+        time_door_open := 13.3,
+        content_type := 123, 
+        defrost_cycle := 1233,
+        oxygen_level := 18.2,
+        nitrogen_level := 23.3, 
+        humidity_level := 34.3,
+        target_humidity_level := 123.3,
+        carbon_dioxide_level := 123.2, 
+        fan_1 := true, 
+        fan_2 := true,
+        fan_3 := true,
+        latitude := 123.4,
+        longitude := 112.3,
+        maintenance_required := 5
+    ),
+    '2020-04-22T12:50:30',
+    'containerType-oo1'
+);
+
+// get container tracker with container id container_ID-1234
+select * from containerTracker where CONTAINERID='container_ID-1234';
+
+
+
+------ 

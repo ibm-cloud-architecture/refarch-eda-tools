@@ -1,0 +1,41 @@
+version: '2'
+services:
+  ksqldb-server:
+    image: confluentinc/ksqldb-server:0.11.0
+    hostname: ksqldb-server
+    container_name: ksqldb-server
+    ports:
+      - "8088:8088"
+    environment:
+      KSQL_LISTENERS: http://0.0.0.0:8088
+      KSQL_BOOTSTRAP_SERVERS: ${KAFKA_BOOTSTRAP_SERVERS}
+      KSQL_KSQL_STREAMS_REPLICATION_FACTOR: 3
+      KSQL_KSQL_LOGGING_PROCESSING_TOPIC_REPLICATION_FACTOR: 3
+      KSQL_KSQL_LOGGING_PROCESSING_STREAM_AUTO_CREATE: "true"
+      KSQL_KSQL_LOGGING_PROCESSING_TOPIC_AUTO_CREATE: "true"
+      KSQL_SASL_JAAS_CONFIG: org.apache.kafka.common.security.plain.PlainLoginModule required username="token" password=${KAFKA_API_KEY};
+      KSQL_SECURITY_PROTOCOL: SASL_SSL
+      KSQL_SASL_MECHANISM: PLAIN
+      KSQL_spring.cloud.stream.kafka.binder.replicationFactor: 3
+      KSQL_spring.cloud.stream.kafka.streams.binder.replicationFactor: 3
+      KSQL_spring.cloud.stream.kafka.streams.binder.configuration.replication.factor: 3
+
+  ksqldb-cli:
+    image: confluentinc/ksqldb-cli:0.11.0
+    container_name: ksqldb-cli
+    depends_on:
+      - ksqldb-server
+    entrypoint: /bin/sh
+    environment:
+      KSQL_KSQL_streams.bootstrap.servers: ${KAFKA_BOOTSTRAP_SERVERS}
+      KSQL_KSQ_SASL_JAAS_CONFIG: org.apache.kafka.common.security.plain.PlainLoginModule required username="token" password=${KAFKA_API_KEY};
+      KSQL_KSQ_SECURITY_PROTOCOL: SASL_SSL
+      KSQL_KSQ_SASL_MECHANISM: PLAIN
+      KSQL_spring.cloud.stream.kafka.binder.replicationFactor: 3
+      KSQL_spring.cloud.stream.kafka.streams.binder.replicationFactor: 3
+      KSQL_spring.cloud.stream.kafka.streams.binder.configuration.replication.factor: 3
+    tty: true
+networks:
+  default:
+    external:
+      name: kafkanet
