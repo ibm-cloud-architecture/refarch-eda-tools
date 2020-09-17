@@ -1,0 +1,17 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: mq-kafka-sink-demo-config
+  namespace: mq-demo
+data:
+  KAFKA_API_KEY: bA ... Qp
+  KAFKA_BOOTSTRAP_SERVERS: >-
+    broker-1- ... eventstreams.cloud.ibm.com:9093
+  KAFKA_TOPICS: inventory
+  MQ_HOST: mq-service
+  MQ_PORT: "1414"
+  MQ_USER: admin
+  MQ_QUEUE_MANAGER: QM1
+  MQ_PASSWORD: passw0rd
+  MQ_CHANNEL: KAFKA.CHANNEL
+  MQ_QUEUE: INVENTORY

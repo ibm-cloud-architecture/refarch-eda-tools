@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ibm-mq
+  labels:
+    app: mq-kafka-sink-demo-app
+  namespace: mq-demo
+spec:
+  containers:
+    - name: ibm-mq
+      image: ibmcom/mq
+      ports:
+        - containerPort: 1414
+          protocol: TCP
+        - containerPort: 9443
+          protocol: TCP
+        - containerPort: 9157
+          protocol: TCP
+      envFrom:
+        - configMapRef:
+            name: mq-config

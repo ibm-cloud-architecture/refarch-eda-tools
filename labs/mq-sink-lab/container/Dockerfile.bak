@@ -1,0 +1,27 @@
+FROM ibmjava:8-sdk
+
+ADD https://mirrors.koehn.com/apache/kafka/2.5.0/kafka_2.12-2.5.0.tgz /tmp/
+RUN tar -C /opt -xvf /tmp/kafka_2.12-2.5.0.tgz
+RUN rm -f /tmp/kafka_2.12-2.5.0.tgz
+RUN ln -s /opt/kafka_2.12-2.5.0 /opt/kafka
+RUN mv -f /opt/kafka/config/connect-distributed.properties /opt/kafka/config/connect-distributed.properties.bak
+COPY connect-distributed.properties /opt/kafka/config/connect-distributed.properties
+
+RUN apt update
+RUN apt install -y git
+WORKDIR /opt
+RUN git clone https://github.com/ibm-messaging/kafka-connect-jdbc-sink.git
+RUN apt install -y maven
+WORKDIR /opt/kafka-connect-jdbc-sink
+RUN mvn clean package
+RUN ln -s /opt/kafka-connect-jdbc-sink/target/kafka-connect-jdbc-sink-0.0.1-SNAPSHOT-jar-with-dependencies.jar /opt/kafka/libs/
+RUN mv -f /opt/kafka-connect-jdbc-sink/config/connector-config.json /opt/kafka-connect-jdbc-sink/config/connector-config.json.bak
+COPY db2-sink-connector-config.json /opt/kafka-connect-jdbc-sink/config/connector-config.json
+ENV DB2_CONNECTION_POOL_SIZE 5
+
+ADD https://repo1.maven.org/maven2/com/ibm/db2/jcc/11.5.0.0/jcc-11.5.0.0.jar /opt/db2-jdbc-driver-11.5.00/
+RUN ln -s /opt/db2-jdbc-driver-11.5.00/jcc-11.5.0.0.jar /opt/kafka/libs/
+
+RUN apt install -y curl
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
