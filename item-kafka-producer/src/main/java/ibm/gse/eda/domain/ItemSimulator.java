@@ -2,7 +2,6 @@ package ibm.gse.eda.domain;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -14,7 +13,6 @@ import javax.inject.Inject;
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
 import org.eclipse.microprofile.reactive.messaging.Message;
-import org.eclipse.microprofile.reactive.messaging.Metadata;
 
 import io.smallrye.mutiny.Multi;
 import io.smallrye.reactive.messaging.kafka.KafkaRecord;
@@ -35,7 +33,7 @@ public class ItemSimulator {
 
     @Inject
     @Channel("items")
-    Emitter<KafkaRecord<String,Item>> emitter;
+    Emitter<Item> emitter;
 
     public ItemSimulator() {
     }
@@ -52,11 +50,7 @@ public class ItemSimulator {
     public void sendItems(Integer numberOfRecords) {
         Multi.createFrom().items(buildItems(numberOfRecords).stream()).subscribe().with(item -> {
             logger.warning("send " + item.toString());
-            OutgoingKafkaRecordMetadata<String> metadata = OutgoingKafkaRecordMetadata.<String>builder()
-                    .withKey(item.storeName)
-                    .withTimestamp(Instant.now())
-                    .build();
-            KafkaRecord<String,Item> record = KafkaRecord.from(Message.of(item, Metadata.of(metadata)));
+            Message<Item> record = KafkaRecord.of(item.storeName,item);
             emitter.send(record );
         }, failure -> System.out.println("Failed with " + failure.getMessage()));
     }

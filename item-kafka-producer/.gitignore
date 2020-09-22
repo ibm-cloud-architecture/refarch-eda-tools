@@ -1,5 +1,6 @@
 .env
 certs/
+scripts/output.properties
 # Eclipse
 .project
 .classpath
