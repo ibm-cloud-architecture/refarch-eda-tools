@@ -1,63 +1,64 @@
-import json, os
+import time 
 from confluent_kafka import KafkaError, Producer
-import kafka.EventBackboneConfiguration as ebc
+import json, datetime, logging
+import os
 
 class KafkaProducer:
 
     def __init__(self,
                 kafka_brokers = "", 
-                kafka_apikey = "", 
+                kafka_user = "", 
+                kafka_pwd = "", 
                 kafka_cacert = "", 
+                kafka_sasl_mechanism = "", 
                 topic_name = ""):
         self.kafka_brokers = kafka_brokers
-        self.kafka_apikey = kafka_apikey
+        self.kafka_user = kafka_user
+        self.kafka_pwd = kafka_pwd
+        self.kafka_sasl_mechanism = kafka_sasl_mechanism
         self.kafka_cacert = kafka_cacert
         self.topic_name = topic_name
 
     def prepare(self,groupID = "pythonproducers"):
         options ={
                 'bootstrap.servers':  self.kafka_brokers,
-                'group.id': groupID
+                'group.id': groupID,
+                'delivery.timeout.ms': 15000,
+                'request.timeout.ms' : 15000
         }
-        if (self.kafka_apikey != ''):
+        if (self.kafka_user != ''):
             options['security.protocol'] = 'SASL_SSL'
-            options['sasl.mechanisms'] = 'PLAIN'
-            options['sasl.username'] = 'token'
-            options['sasl.password'] = self.kafka_apikey
-        if (self.kafka_cacert != ''):
+            options['sasl.mechanisms'] = self.kafka_sasl_mechanism
+            options['sasl.username'] = self.kafka_user
+            options['sasl.password'] = self.kafka_pwd
+        
+        if (self.kafka_cacert != '' ):
             options['ssl.ca.location'] = self.kafka_cacert
-        print("[KafkaProducer] - This is the configuration for the producer:")
-        print('[KafkaProducer] - {}'.format(options))
+
+        logging.info("--- This is the configuration for the producer: ---")
+        logging.info('[KafkaProducer] - {}'.format(options))
+        logging.info("---------------------------------------------------")
         self.producer = Producer(options)
+
 
     def delivery_report(self,err, msg):
         """ Called once for each message produced to indicate delivery result.
             Triggered by poll() or flush(). """
         if err is not None:
-            print('[ERROR] - [KafkaProducer] - Message delivery failed: {}'.format(err))
+            logging.info( str(datetime.datetime.today()) + ' - Message delivery failed: {}'.format(err))
         else:
-            print('[KafkaProducer] - Message delivered to {} [{}]'.format(msg.topic(), msg.partition()))
+            logging.info(str(datetime.datetime.today()) + ' - Message delivered to {} [{}]'.format(msg.topic(), msg.partition()))
 
     def publishEvent(self, eventToSend, keyName):
         dataStr = json.dumps(eventToSend)
+        logging.info("Send " + dataStr + " with key " + keyName + " to " + self.topic_name)
+        
         self.producer.produce(self.topic_name,
-                            key=str(eventToSend[keyName]).encode('utf-8'),
-                            value=dataStr.encode('utf-8'), 
-                            callback=self.delivery_report)
+                           key=str(eventToSend[keyName]).encode('utf-8'),
+                           value=dataStr.encode('utf-8'),
+                           callback=self.delivery_report)
         self.producer.flush()
+  
 
-def processRecords(TOPICNAME,GROUPID,KEYNAME,docsToSend):
-    print("Producer to the topic " + TOPICNAME)
-    try:
-        producer = KafkaProducer(kafka_brokers = ebc.getBrokerEndPoints(), 
-                kafka_apikey = ebc.getEndPointAPIKey(), 
-                kafka_cacert = ebc.getKafkaCertificate(),
-                topic_name = TOPICNAME)
-
-        producer.prepare(groupID= GROUPID)
-        for doc in docsToSend:
-            print("sending -> " + str(doc))
-            producer.publishEvent(doc,KEYNAME)
-    except KeyboardInterrupt:
-        input('Press enter to continue')
-        print("Thank you")
+   
+  

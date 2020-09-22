@@ -1,7 +1,6 @@
 package ibm.gse.eda.producer;
 
 import java.util.Date;
-import java.util.logging.Logger;
 
 import javax.ws.rs.GET;
 
@@ -11,6 +10,7 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
 import org.eclipse.microprofile.reactive.messaging.OnOverflow;
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class DataProducer {
