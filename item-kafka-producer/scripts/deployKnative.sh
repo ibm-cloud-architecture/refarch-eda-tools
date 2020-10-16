@@ -1,0 +1,11 @@
+kn service create itemkafkaproducer --image ibmcase/item-kafka-producer \
+--mount /deployments/certs/user/user.p12:secret:jb-tls-user \
+--mount /deployments/certs/server/ca.p12:secret:light-es-v10-cluster-ca-cert \
+--env KAFKA_USER=jb-tls-user \
+--env SECURE_PROTOCOL=SSL \
+--env KAFKA_BROKERS=light-es-v10-kafka-bootstrap.eventstreams.svc:9093 \
+--env KAFKA_CERT_PATH=/deployments/certs/server/ca.p12 \
+--env USER_CERT_PATH=/deployments/certs/user/user.p12 \
+--env-from KAFKA_CERT_PWD=secret:jb-tls-user.user.password \
+--env-from KAFKA_PASSWORD=secret:light-es-v10-cluster-ca-cert.ca.password \
+-n jb-sandbox
