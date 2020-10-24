@@ -1,7 +1,7 @@
 ﻿apiVersion: eventstreams.ibm.com/v1beta1
 kind: EventStreams
 metadata:
-  name: light-es
+  name: eda-es
   namespace: eventstreams
 spec:
   security:
@@ -38,14 +38,14 @@ spec:
       replicas: 3
       storage:
         class: ibmc-block-gold
-        size: 20Gi
+        size: 2Gi
         type: persistent-claim
     zookeeper:
       metrics: {}
       replicas: 3
       storage:
         class: ibmc-block-gold
-        size: 5Gi
+        size: 1Gi
         type: persistent-claim
   version: 10.1.0
 

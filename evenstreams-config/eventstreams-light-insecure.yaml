@@ -1,0 +1,41 @@
+﻿apiVersion: eventstreams.ibm.com/v1beta1
+kind: EventStreams
+metadata:
+  name: light-es
+  namespace: eventstreams
+spec:
+  version: 10.1.0
+  license:
+    accept: true
+    use: CloudPakForIntegrationNonProduction
+  adminApi: {}
+  adminUI: {}
+  apicurioRegistry: {}
+  collector: {}
+  restProducer: {}
+  security:
+    internalTls: NONE
+  strimziOverrides:
+    kafka:
+      replicas: 3
+      config:
+        inter.broker.protocol.version: '2.6'
+        interceptor.class.names: com.ibm.eventstreams.interceptors.metrics.ProducerMetricsInterceptor
+        log.message.format.version: '2.6'
+        offsets.topic.replication.factor: 1
+        transaction.state.log.min.isr: 1
+        transaction.state.log.replication.factor: 1
+      listeners:
+        plain: {}
+      metrics: {}
+      storage:
+        class: ibmc-block-gold
+        size: 2Gi
+        type: persistent-claim
+    zookeeper:
+      replicas: 3
+      metrics: {}
+      storage:
+        class: ibmc-block-gold
+        size: 1Gi
+        type: persistent-claim
