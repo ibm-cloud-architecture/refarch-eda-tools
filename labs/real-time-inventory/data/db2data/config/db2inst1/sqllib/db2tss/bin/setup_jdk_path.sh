@@ -1,1 +1,0 @@
-/opt/ibm/db2/V11.5/db2tss/bin/setup_jdk_path.sh

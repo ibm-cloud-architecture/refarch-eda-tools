@@ -1,36 +1,0 @@
-
-2020-11-03-21.52.42.250474   Instance:db2inst1   Node:000
-PID:12732(db2star2)   TID:3491583872   Appid:none
-base sys utilities  DB2StartMain Probe:911 
-
-ADM7513W  Database manager has started.
-
-2020-11-03-23.50.56.561903   Instance:db2inst1   Node:000
-PID:33329(db2stop2)   TID:283125632   Appid:none
-base sys utilities  DB2StopMain Probe:911 
-
-ADM7514W  Database manager has stopped.
-
-2020-11-03-23.54.13.393594   Instance:db2inst1   Node:000
-PID:13563(db2star2)   TID:841672576   Appid:none
-base sys utilities  DB2StartMain Probe:911 
-
-ADM7513W  Database manager has started.
-
-2020-11-04-00.07.41.888984   Instance:db2inst1   Node:000
-PID:16053(db2stop2)   TID:2417321856   Appid:none
-base sys utilities  DB2StopMain Probe:911 
-
-ADM7514W  Database manager has stopped.
-
-2020-11-04-00.11.41.872920   Instance:db2inst1   Node:000
-PID:13577(db2star2)   TID:3922040704   Appid:none
-base sys utilities  DB2StartMain Probe:911 
-
-ADM7513W  Database manager has started.
-
-2020-11-04-00.39.55.251445   Instance:db2inst1   Node:000
-PID:18579(db2stop2)   TID:3403286400   Appid:none
-base sys utilities  DB2StopMain Probe:911 
-
-ADM7514W  Database manager has stopped.
