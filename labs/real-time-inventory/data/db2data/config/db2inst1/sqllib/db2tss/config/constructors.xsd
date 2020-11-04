@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="constructors">
+    <xs:annotation>
+      <xs:documentation>The constructors element contains all constructor configurations as a sequence.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+        <xs:annotation>
+          <xs:documentation>constructor contains concrete Constructor configuration</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="constructor" type="constructor" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:complexType name="constructor">
+	  <xs:sequence>
+       
+       
+       
+	   <xs:element name="name" maxOccurs="1" minOccurs="1">
+		   <xs:annotation>
+		     <xs:documentation>Constructor unique name</xs:documentation>  
+		   </xs:annotation>
+		   <xs:simpleType>
+		    <xs:restriction base="xs:string">
+		      <xs:minLength value="1"/>
+		     </xs:restriction>
+		   </xs:simpleType>
+	   </xs:element>
+	   
+	   <xs:element name="class" maxOccurs="1" minOccurs="1">
+	     <xs:annotation>
+          <xs:documentation>Constructor full class name including package</xs:documentation>  
+        </xs:annotation>
+          <xs:simpleType>
+		    <xs:restriction base="xs:string">
+		      <xs:minLength value="1"/>
+		     </xs:restriction>
+		   </xs:simpleType>
+	   </xs:element>
+       
+       <xs:element name="batchSize" maxOccurs="1" minOccurs="1">
+	    <xs:annotation>
+	     <xs:documentation>Constructor batchSize defines the maximum 
+	                        documents array size that might be populated at a time
+	      </xs:documentation>  
+	    </xs:annotation>
+	    <xs:simpleType>
+	    	<xs:restriction base="xs:integer">
+	    		<xs:minExclusive value="0"></xs:minExclusive>
+	    	</xs:restriction>
+	    </xs:simpleType>
+       </xs:element>
+
+       <xs:element name="customConfig" maxOccurs="unbounded" minOccurs="1">
+	    <xs:annotation>
+	     <xs:documentation>The customConfig value can be any string or XML fragment.
+	                         If special characters are used then 
+	                         CDATA tag need to be used in this section.
+	            	         For example, the value can be the location of the file with custom	
+			                 constructor registry information. This information is sent to the 
+				             constructor one time at run time upon initialization.
+	      </xs:documentation>
+	    </xs:annotation>
+			<xs:complexType mixed="true">
+				<xs:sequence>
+					<xs:any minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
+				</xs:sequence>
+				<xs:attribute name="name" type="xs:string"/>
+			</xs:complexType>
+       </xs:element>
+
+	 </xs:sequence>
+     
+  </xs:complexType>
+</xs:schema>

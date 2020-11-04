@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<synonymgroups version="1.0">
+<synonymgroup>
+   <synonym>actual cash value</synonym>
+   <synonym>acv</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>adjuster</synonym>
+   <synonym>claims adjuster</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>admitted carrier</synonym>
+   <synonym>admitted company</synonym>
+   <synonym>authorized carrier</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>agent</synonym>
+   <synonym>insurance agent</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>appraiser</synonym>
+   <synonym>evaluator</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>at risk</synonym>
+   <synonym>uninsured</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>csl</synonym>
+   <synonym>combined single limit</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>carrier</synonym>
+   <synonym>insurance carrier</synonym>
+   <synonym>insurance company</synonym>
+   <synonym>insurer</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>claim</synonym>
+   <synonym>insurance claim</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>date of issue</synonym>
+   <synonym>issue date</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>deductible</synonym>
+   <synonym><![CDATA[out-of-pocket]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>erisa</synonym>
+   <synonym>employee retirement income security act</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>eligibility requirements</synonym>
+   <synonym>qualification requirements</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>endorsement</synonym>
+   <synonym>policy amendment</synonym>
+   <synonym>rider</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>file a claim</synonym>
+   <synonym>report a claim</synonym>
+   <synonym>submit a claim</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>ie</synonym>
+   <synonym>insurance examiner</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>iiaa</synonym>
+   <synonym>independent insurance agents of america</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>indemnify</synonym>
+   <synonym>compensate</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>insurability</synonym>
+   <synonym>acceptability</synonym>
+   <synonym>eligibility</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>insured</synonym>
+   <synonym>holder</synonym>
+   <synonym>policy holder</synonym>
+   <synonym>policy owner</synonym>
+   <synonym>policyholder</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>loss control</synonym>
+   <synonym>loss mitigation</synonym>
+   <synonym>loss prevention</synonym>
+   <synonym>risk management</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>oasdi</synonym>
+   <synonym>old age survivors and disabilities insurance</synonym>
+   <synonym>social security</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>policy</synonym>
+   <synonym>insurance policy</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>premium</synonym>
+   <synonym>insurance premium</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>property inventory</synonym>
+   <synonym>inventory</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>rmis</synonym>
+   <synonym>risk management information system</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>rejection</synonym>
+   <synonym>denial</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>sig</synonym>
+   <synonym>self insured group</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>settlement</synonym>
+   <synonym>claim payment</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>tpa</synonym>
+   <synonym>3rd party administrator</synonym>
+   <synonym>third party administrator</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>umbrella</synonym>
+   <synonym>excess liability</synonym>
+</synonymgroup>
+</synonymgroups>

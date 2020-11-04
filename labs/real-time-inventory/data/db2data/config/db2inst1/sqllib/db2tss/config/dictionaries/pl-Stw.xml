@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stopWords>
+<!-- Add stop words as follows: -->
+<!-- <stopWord>stopword1</stopWord> -->
+<!-- <stopWord>stopword2</stopWord> -->
+<!-- Add as many <stopWord> tags as you need - one per line -->
+</stopWords>

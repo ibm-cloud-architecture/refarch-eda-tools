@@ -1,0 +1,11 @@
+<config>
+<query/>
+<server>
+<port>55000</port>
+<stellentEnabled>false</stellentEnabled>
+</server>
+<index>
+<enableXMLNameSpaceSearch>false</enableXMLNameSpaceSearch>
+<enableXMLDateSearch>false</enableXMLDateSearch>
+</index>
+</config>

@@ -1,0 +1,9 @@
+FM_ON = no # default
+FM_ACTIVE = yes # default
+START_TIMEOUT = 600 # default
+STOP_TIMEOUT = 600 # default
+STATUS_TIMEOUT = 20 # default
+STATUS_INTERVAL = 20 # default
+RESTART_RETRIES = 3 # default
+ACTION_RETRIES = 3 # default
+NOTIFY_ADDRESS = db2inst1@bc8bb9bfc33d # default

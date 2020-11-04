@@ -1,7 +1,6 @@
 version: '3.7'
 services:
   rabbitmq:
-    hostname: rabbitmq
     image: rabbitmq:3-management
     ports:
       - '15672:15672'
@@ -11,11 +10,8 @@ services:
       RABBITMQ_DEFAULT_PASS: rabbit-pass
     volumes:
       - ./enable_plugins:/etc/rabbitmq/enabled_plugins
-    networks:
-      - kafka-network
   zookeeper:
     image: strimzi/kafka:latest-kafka-2.6.0
-    hostname: zookeeper
     command: [
         "sh", "-c",
         "bin/zookeeper-server-start.sh config/zookeeper.properties"
@@ -31,11 +27,8 @@ services:
     volumes:
       - ./data/zookeeper/data:/data
       - ./data/zookeeper/datalog:/datalog
-    networks:
-      - kafka-network
   kafka:
     image: strimzi/kafka:latest-kafka-2.6.0
-    hostname: kafka
     command: [
     "sh", "-c",
     "bin/kafka-server-start.sh config/server.properties --override listeners=$${KAFKA_LISTENERS} --override advertised.listeners=$${KAFKA_ADVERTISED_LISTENERS} --override zookeeper.connect=$${KAFKA_ZOOKEEPER_CONNECT}"
@@ -53,8 +46,23 @@ services:
       - .:/home          
     depends_on:
     - zookeeper
-    networks:
-      - kafka-network
+  kconnect:
+    image: ibmcase/kconnect:0.1.0
+    ports:
+      - '8083:8083'
+    depends_on: 
+      - kafka
+  db2:
+    container_name: db2
+    environment:
+      LICENSE: accept
+      DB2INST1_PASSWORD: ${DB2INST1_PASSWORD:-db2inst1}
+    image: ibmcom/db2:11.5.0.0a
+    ports:
+        - 50000:50000
+    privileged: true
+    volumes:
+        - ./data/db2data:/database
   simulator:
     image: ibmcase/eda-store-simulator
     depends_on:
@@ -73,8 +81,20 @@ services:
       - kafka
       - ibmmq
       - rabbitmq
-    networks:
-      - kafka-network
+  iteminventory:
+    image: ibmcase/item-aggregator:0.0.6
+    ports:
+      - 8081:8080
+    environment: 
+        KAFKA_BROKERS: kafka:9092
+        SECURE_PROTOCOL: PLAINTEXT
+        KAFKA_STREAMS_SASL_MECHANISM: ''
+        USER_CERT_PWD: ''
+        USER_CERT_PATH: ''
+        KAFKA_CERT_PATH: ''
+        KAFKA_CERT_PWD: ''
+    depends_on:
+      - kafka
   ibmmq:
     image: ibmcom/mq
     ports:
@@ -91,10 +111,5 @@ services:
         MQ_QMGR_NAME: QM1
         MQ_APP_PASSWORD: passw0rd
         MQ_ENABLE_METRICS: "true"
-    networks:
-      - kafka-network
 volumes:
   qm1data:
-networks:
-  kafka-network:
-    name: kafkanet

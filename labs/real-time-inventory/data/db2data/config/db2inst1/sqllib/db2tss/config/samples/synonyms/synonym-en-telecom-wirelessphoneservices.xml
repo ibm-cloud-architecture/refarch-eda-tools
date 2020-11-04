@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<synonymgroups version="1.0">
+<synonymgroup>
+   <synonym>3g</synonym>
+   <synonym><![CDATA[3rd-generation]]></synonym>
+   <synonym><![CDATA[third-generation]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>amps</synonym>
+   <synonym>advanced mobile phone service</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>apc</synonym>
+   <synonym>adaptive power control</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>abbreviated dialing</synonym>
+   <synonym>adn</synonym>
+   <synonym>abbreviated dialing number</synonym>
+   <synonym>auto dial</synonym>
+   <synonym><![CDATA[auto-dial number]]></synonym>
+   <synonym>repertory dialing</synonym>
+   <synonym>speed dial</synonym>
+   <synonym>speed dialing</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>airtime</synonym>
+   <synonym><![CDATA[air-time]]></synonym>
+   <synonym><![CDATA[talk-time]]></synonym>
+   <synonym>talktime</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>anytime minutes</synonym>
+   <synonym>unrestricted minutes</synonym>
+   <synonym>whenever minutes</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>bps</synonym>
+   <synonym>bits per second</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>bandwidth</synonym>
+   <synonym>capacity</synonym>
+   <synonym>throughput</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>broadband</synonym>
+   <synonym><![CDATA[hi-speed]]></synonym>
+   <synonym>high speed</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>cdma</synonym>
+   <synonym>code division multiple access</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>cdpd</synonym>
+   <synonym>cellular digital packet data</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>cmrs</synonym>
+   <synonym>commercial mobile radio service</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>cpni</synonym>
+   <synonym>customer proprietary network information</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>csd</synonym>
+   <synonym>circuit switched data</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>call forwarding</synonym>
+   <synonym>auto forward</synonym>
+   <synonym>call routing</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>cancellation fee</synonym>
+   <synonym>early termination fee</synonym>
+   <synonym>termination fee</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>cell phone</synonym>
+   <synonym>cellphone</synonym>
+   <synonym>mobile phone</synonym>
+   <synonym>wireless phone</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>conference call</synonym>
+   <synonym>group call</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>damps</synonym>
+   <synonym><![CDATA[d-amps]]></synonym>
+   <synonym>digital advanced mobile phone system</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>dcma</synonym>
+   <synonym>dynamic channel multicarrier architecture</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>dect</synonym>
+   <synonym>digital enhanced cordless telecommunications</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>dmn</synonym>
+   <synonym><![CDATA[digital multi-network]]></synonym>
+   <synonym>digital multinetwork</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>dsss</synonym>
+   <synonym>direct sequence spread spectrum</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>dead spot</synonym>
+   <synonym>dead zone</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>dual nam</synonym>
+   <synonym>dual number assignment module</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ dual-band]]></synonym>
+   <synonym>db</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>esmr</synonym>
+   <synonym>enhanced specialized mobile radio</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>esn</synonym>
+   <synonym>electronic serial number</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>encryption</synonym>
+   <synonym>coding</synonym>
+   <synonym><![CDATA[en-coding]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>fcc</synonym>
+   <synonym>federal communications commission</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>fdma</synonym>
+   <synonym>frequency division multiple access</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>gprs</synonym>
+   <synonym>general packet radio service</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>gsm</synonym>
+   <synonym>global system for mobile communications</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>gtp</synonym>
+   <synonym>gprs tunneling protocol</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>ghz</synonym>
+   <synonym><![CDATA[giga-hertz]]></synonym>
+   <synonym>gigahertz</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>hdml</synonym>
+   <synonym>ghml</synonym>
+   <synonym>handheld device markup language</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>hlr</synonym>
+   <synonym>home location register</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>handheld</synonym>
+   <synonym><![CDATA[hand-held]]></synonym>
+   <synonym>pda</synonym>
+   <synonym>portable digital assistant</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ hands-free]]></synonym>
+   <synonym>handsfree</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>help</synonym>
+   <synonym>support</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>hz</synonym>
+   <synonym>hertz</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>iden</synonym>
+   <synonym><![CDATA[i-den]]></synonym>
+   <synonym>integrated digital enhanced network</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>ieee</synonym>
+   <synonym>institute of electrical and electronics engineers</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>imei</synonym>
+   <synonym>international mobile equipment identity</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>imsi</synonym>
+   <synonym>international mobile subscriber identity</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>isp</synonym>
+   <synonym>internet service provider</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>internet</synonym>
+   <synonym>www</synonym>
+   <synonym>web</synonym>
+   <synonym>world wide web</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>khz</synonym>
+   <synonym><![CDATA[kilo-hertz]]></synonym>
+   <synonym>kilohertz</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>lan</synonym>
+   <synonym>local area network</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>lcd</synonym>
+   <synonym>liquid crystal display</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>lig</synonym>
+   <synonym>lawful interception gateway</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>lnp</synonym>
+   <synonym>local number portability</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>min</synonym>
+   <synonym>mobile identification number</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>mtm</synonym>
+   <synonym>m2m</synonym>
+   <synonym>mobile 2 mobile</synonym>
+   <synonym>mobile to mobile</synonym>
+   <synonym>mobile to mobile minutes</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>mtso</synonym>
+   <synonym>mobile telephone switching office</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>mhz</synonym>
+   <synonym><![CDATA[mega-hertz]]></synonym>
+   <synonym>megahertz</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>nam</synonym>
+   <synonym>number assignment module</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>namps</synonym>
+   <synonym>narrowband advanced mobile phone system</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>nss</synonym>
+   <synonym>network switching subsystem</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>osi</synonym>
+   <synonym>open systems interconnection</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>ota</synonym>
+   <synonym><![CDATA[over-the-air]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>otasp</synonym>
+   <synonym><![CDATA[over-the-air service positioning]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>pcs</synonym>
+   <synonym>personal communication service</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>pdp</synonym>
+   <synonym>packet data protocol</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>pin</synonym>
+   <synonym>personal identification number</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>ptn</synonym>
+   <synonym>personal telephone number</synonym>
+   <synonym>phone number</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>phone</synonym>
+   <synonym>telephone</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>plans</synonym>
+   <synonym>calling plans</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>roaming</synonym>
+   <synonym><![CDATA[follow-me-roaming]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>sgsn</synonym>
+   <synonym>serving gprs support node</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>sim</synonym>
+   <synonym>subscriber identity module</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>sms</synonym>
+   <synonym>short messaging service</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>signal strength</synonym>
+   <synonym>signal</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>smartphone</synonym>
+   <synonym><![CDATA[smart-phone]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>tdma</synonym>
+   <synonym>time division multiple access</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ text-messaging]]></synonym>
+   <synonym>test messaging</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ tri-band]]></synonym>
+   <synonym>triband</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>uhf</synonym>
+   <synonym><![CDATA[ultra hi-frequency]]></synonym>
+   <synonym>ultra high frequency</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>vhf</synonym>
+   <synonym><![CDATA[very hi-frequency]]></synonym>
+   <synonym>very high frequency</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>voip</synonym>
+   <synonym>voice over ip</synonym>
+   <synonym>voice over internet</synonym>
+   <synonym>voice over internet protocol</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>vecoder</synonym>
+   <synonym><![CDATA[v-coder]]></synonym>
+   <synonym>vcoder</synonym>
+   <synonym>vocoder</synonym>
+   <synonym><![CDATA[voice-coder]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>voice messaging</synonym>
+   <synonym><![CDATA[voice-mail]]></synonym>
+   <synonym>voicemail</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ voice-activated dialing]]></synonym>
+   <synonym>speak dial</synonym>
+   <synonym><![CDATA[voice-dial]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>wae</synonym>
+   <synonym>wireless application environment</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>wan</synonym>
+   <synonym>wide area network</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>wap</synonym>
+   <synonym>wireless application protocol</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>wdp</synonym>
+   <synonym>wireless datagram</synonym>
+   <synonym>wireless datagram protocol</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>wisp</synonym>
+   <synonym>wireless isp</synonym>
+   <synonym>wireless internet service provider</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>wlnp</synonym>
+   <synonym>wireless lnp</synonym>
+   <synonym>wireless local number portability</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>wml</synonym>
+   <synonym>wireless markup language</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>wsp</synonym>
+   <synonym>wireless session protocol</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>wtls</synonym>
+   <synonym>wireless transport layer security</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>wtp</synonym>
+   <synonym>wireless transaction protocol</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ wi-fi]]></synonym>
+   <synonym>wifi</synonym>
+   <synonym>wireless fidelity</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>wireless carrier</synonym>
+   <synonym>service provider</synonym>
+</synonymgroup>
+</synonymgroups>

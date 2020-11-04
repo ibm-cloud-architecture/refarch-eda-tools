@@ -5,6 +5,7 @@
         "tasks.max": "1",
         "kafka.topic" : "items",
         "rabbitmq.host": "rabbitmq",
+        "rabbitmq.port": 5672,
         "rabbitmq.queue" : "items",
         "rabbitmq.username" : "rabbit-user",
         "rabbitmq.password" : "rabbit-pass",

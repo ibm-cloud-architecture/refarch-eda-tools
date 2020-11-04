@@ -11,8 +11,6 @@ services:
       RABBITMQ_DEFAULT_PASS: rabbit-pass
     volumes:
       - ./enable_plugins:/etc/rabbitmq/enabled_plugins
-    networks:
-      - kafka-network
   zookeeper:
     image: strimzi/kafka:latest-kafka-2.6.0
     hostname: zookeeper
@@ -31,8 +29,6 @@ services:
     volumes:
       - ./data/zookeeper/data:/data
       - ./data/zookeeper/datalog:/datalog
-    networks:
-      - kafka-network
   kafka:
     image: strimzi/kafka:latest-kafka-2.6.0
     hostname: kafka
@@ -53,8 +49,6 @@ services:
       - .:/home          
     depends_on:
     - zookeeper
-    networks:
-      - kafka-network
   simulator:
     image: ibmcase/eda-store-simulator
     depends_on:
@@ -69,14 +63,7 @@ services:
       AMQP_HOST: rabbitmq
     depends_on:
       - rabbitmq
-    networks:
-      - kafka-network
   kconnect:
-    image: ibmcase/kconnect:v1.0.0
+    image: ibmcase/kconnect:0.1.0
     ports:
       - '8083:8083'
-    networks:
-      - kafka-network
-networks:
-  kafka-network:
-    name: kafkanet

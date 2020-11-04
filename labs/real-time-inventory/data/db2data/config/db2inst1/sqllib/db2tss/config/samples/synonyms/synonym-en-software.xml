@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<synonymgroups version="1.0">
+<synonymgroup>
+   <synonym>acl</synonym>
+   <synonym>access control list</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>api</synonym>
+   <synonym>application programming interface</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>asp</synonym>
+   <synonym>active server pages</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>administrator</synonym>
+   <synonym>admin</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>application</synonym>
+   <synonym>app</synonym>
+   <synonym>program</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>argument</synonym>
+   <synonym>arg</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>bug</synonym>
+   <synonym>defect</synonym>
+   <synonym>known issue</synonym>
+   <synonym>malfunction</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ c #]]></synonym>
+   <synonym>c sharp</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>cpu</synonym>
+   <synonym>central processing unit</synonym>
+   <synonym>processor</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>cached</synonym>
+   <synonym>in the cache</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>command</synonym>
+   <synonym>cmd</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>command line</synonym>
+   <synonym>cli</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>configuration</synonym>
+   <synonym>config</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>control</synonym>
+   <synonym>ctrl</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>crash</synonym>
+   <synonym>blue screen</synonym>
+   <synonym>core dump</synonym>
+   <synonym>died</synonym>
+   <synonym>dump core</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>dll</synonym>
+   <synonym>dynamically linked library</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>database</synonym>
+   <synonym>db</synonym>
+   <synonym>data base</synonym>
+   <synonym>rdbms</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>development</synonym>
+   <synonym>dev</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>directory</synonym>
+   <synonym>folder</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>documentation</synonym>
+   <synonym>doc</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>downtime</synonym>
+   <synonym>down time</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>drive</synonym>
+   <synonym>hard drive</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>error</synonym>
+   <synonym>exception</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>executable</synonym>
+   <synonym>exe</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>ftp</synonym>
+   <synonym>file transfer protocol</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>gb</synonym>
+   <synonym>gigabyte</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>ghz</synonym>
+   <synonym>gigahertz</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>jdbc</synonym>
+   <synonym>java database connectivity</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>jdk</synonym>
+   <synonym>java development kit</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>load test</synonym>
+   <synonym>performance test</synonym>
+   <synonym>red line test</synonym>
+   <synonym>redline test</synonym>
+   <synonym>stress test</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>log</synonym>
+   <synonym>log file</synonym>
+   <synonym>server log</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>login</synonym>
+   <synonym><![CDATA[log-in]]></synonym>
+   <synonym>logon</synonym>
+   <synonym>uid</synonym>
+   <synonym>user id</synonym>
+   <synonym>userid</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>mb</synonym>
+   <synonym>megabyte</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>memory leak</synonym>
+   <synonym>memory growth</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>mhz</synonym>
+   <synonym>megahertz</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ multi-thread]]></synonym>
+   <synonym>multithread</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>net</synonym>
+   <synonym>dot net</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>odbc</synonym>
+   <synonym>open database connectivity</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>os</synonym>
+   <synonym>operating system</synonym>
+   <synonym>platform</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>object oriented</synonym>
+   <synonym>oo</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>ootb</synonym>
+   <synonym>out of the box</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>parameter</synonym>
+   <synonym>param</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>password</synonym>
+   <synonym>passwd</synonym>
+   <synonym>pwd</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>patch</synonym>
+   <synonym>hotfix</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>permissions</synonym>
+   <synonym>authorization</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>qa enviornment</synonym>
+   <synonym>test environment</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>ram</synonym>
+   <synonym>memory</synonym>
+   <synonym>random access memory</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>restart</synonym>
+   <synonym><![CDATA[re-start]]></synonym>
+   <synonym>reboot</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>runtime</synonym>
+   <synonym>run time</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>sdk</synonym>
+   <synonym>developer kit</synonym>
+   <synonym>software development kit</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>sp</synonym>
+   <synonym>service pack</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>sql</synonym>
+   <synonym>structured query language</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>severity</synonym>
+   <synonym>sev</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>shutdown</synonym>
+   <synonym>shut down</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>sp1</synonym>
+   <synonym>service pack 1</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>sp2</synonym>
+   <synonym>service pack 1</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>sp3</synonym>
+   <synonym>service pack 3</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>sp4</synonym>
+   <synonym>service pack 4</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>sp5</synonym>
+   <synonym>service pack 5</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>sqlserver</synonym>
+   <synonym>sql server</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>startup</synonym>
+   <synonym>boot</synonym>
+   <synonym>start up</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>support matrix</synonym>
+   <synonym>supported platform</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>text file</synonym>
+   <synonym>txt</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>timeout</synonym>
+   <synonym>time out</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>ui</synonym>
+   <synonym>gui</synonym>
+   <synonym>graphical user interface</synonym>
+   <synonym>user interface</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>url</synonym>
+   <synonym>uniform resource locator</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>variable</synonym>
+   <synonym>var</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>version</synonym>
+   <synonym>rev</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>webserver</synonym>
+   <synonym>web server</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>website</synonym>
+   <synonym>site</synonym>
+   <synonym>web site</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>windows 2000</synonym>
+   <synonym>win2k</synonym>
+   <synonym>windows 2k</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>windows 2003</synonym>
+   <synonym>win2003</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>windows 95</synonym>
+   <synonym>win95</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>windows 98</synonym>
+   <synonym>win98</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>zip file</synonym>
+   <synonym>zip</synonym>
+</synonymgroup>
+</synonymgroups>

@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<synonymgroups version="1.0">
+<synonymgroup>
+   <synonym><![CDATA[ 10,000 shares]]></synonym>
+   <synonym>10 000 shares</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ 10-q]]></synonym>
+   <synonym>quarterly report</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ 401(k)]]></synonym>
+   <synonym>401k</synonym>
+   <synonym><![CDATA[401(k]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ 403(b)]]></synonym>
+   <synonym>403b</synonym>
+   <synonym><![CDATA[403(b]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>529</synonym>
+   <synonym>529 plan</synonym>
+   <synonym>college savings plan</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>abs</synonym>
+   <synonym><![CDATA[asset-backed security]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>ach</synonym>
+   <synonym>automated clearing house</synonym>
+   <synonym>automatic clearing house</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>adr</synonym>
+   <synonym>american depository receipts</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>agi</synonym>
+   <synonym>adjusted gross income</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>amex</synonym>
+   <synonym>american stock exchange</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>amt</synonym>
+   <synonym>alternative minimum tax</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>apr</synonym>
+   <synonym>annual percentage rate</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>apy</synonym>
+   <synonym>annual percentage yield</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>ar turn</synonym>
+   <synonym>accounts receivable turnover</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>atm</synonym>
+   <synonym>automated teller machine</synonym>
+   <synonym>automatic teller machine</synonym>
+   <synonym>mac machine</synonym>
+   <synonym>money machine</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>account termination</synonym>
+   <synonym>account cancellation</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>accrue</synonym>
+   <synonym>increase</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>acid test ratio</synonym>
+   <synonym>quick ratio</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>adjusted net business income</synonym>
+   <synonym>anbi</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>adviser</synonym>
+   <synonym>advisor</synonym>
+   <synonym>advisory</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>advisory account</synonym>
+   <synonym>fee based account</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>alpha</synonym>
+   <synonym><![CDATA[risk-adjusted performance]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>american banking association</synonym>
+   <synonym>aba</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>anti money laundering</synonym>
+   <synonym>aml</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>appreciation</synonym>
+   <synonym>growth</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>ask</synonym>
+   <synonym>low price</synonym>
+   <synonym>lowest price</synonym>
+   <synonym>min price</synonym>
+   <synonym>minimum price</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>assets under management</synonym>
+   <synonym>aum</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>average maturity</synonym>
+   <synonym>average life</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>bank of new york</synonym>
+   <synonym>bony</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>basis point</synonym>
+   <synonym>basis pt</synonym>
+   <synonym>bp</synonym>
+   <synonym>bps</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>bid</synonym>
+   <synonym>high price</synonym>
+   <synonym>highest price</synonym>
+   <synonym>max price</synonym>
+   <synonym>maximum price</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>blue chip</synonym>
+   <synonym>high quality stock</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>bounced check</synonym>
+   <synonym>rubber check</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ broker/dealer]]></synonym>
+   <synonym>broker</synonym>
+   <synonym>brokerage</synonym>
+   <synonym><![CDATA[full-service broker]]></synonym>
+   <synonym><![CDATA[full-service brokerage]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>cboe</synonym>
+   <synonym>chicago board options exchange</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>cd</synonym>
+   <synonym>certificate of deposit</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>cec</synonym>
+   <synonym>commodities exchange center</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>cfa</synonym>
+   <synonym>certified financial analyst</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>cftc</synonym>
+   <synonym>commodity futures trading commission</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>cip</synonym>
+   <synonym>customer identification program</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>cme</synonym>
+   <synonym>chicago mercantile exchange</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>comex</synonym>
+   <synonym>commodity exchange</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>csc</synonym>
+   <synonym><![CDATA[coffee, sugar and cocoa exchange]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>cap</synonym>
+   <synonym>capitalization</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>checkbook</synonym>
+   <synonym><![CDATA[check-book]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>clearinghouse</synonym>
+   <synonym>clearing house</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>close</synonym>
+   <synonym>terminate</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>commission</synonym>
+   <synonym>load</synonym>
+   <synonym>sales charge</synonym>
+   <synonym>sales fee</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>compliance</synonym>
+   <synonym>compliant</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>conduit ira</synonym>
+   <synonym>rollover ira</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>conference</synonym>
+   <synonym>seminar</synonym>
+   <synonym>symposium</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>confidential client profile</synonym>
+   <synonym>schedule b</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>confirms</synonym>
+   <synonym>confirmation report</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>consolidated household statements</synonym>
+   <synonym>householding</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>continuing education</synonym>
+   <synonym>ce</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>coverdell education savings account</synonym>
+   <synonym>coverdell</synonym>
+   <synonym>education ira</synonym>
+   <synonym>education savings account</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>djia</synonym>
+   <synonym>dow</synonym>
+   <synonym>dow jones industrial average</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>direct billing</synonym>
+   <synonym>billing</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>direct investments</synonym>
+   <synonym>alternative investments</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>direct participation program</synonym>
+   <synonym>dpp</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>distribution</synonym>
+   <synonym>withdrawal</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>dollar cost averaging</synonym>
+   <synonym>constant dollar plan</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>ebit</synonym>
+   <synonym>earnings before interest and taxes</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>ebitda</synonym>
+   <synonym><![CDATA[earnings before interest, tax, depreciation and amortization]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>eft</synonym>
+   <synonym>electronic funds transfer</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>etf</synonym>
+   <synonym>exchange traded fund</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>earnings per share</synonym>
+   <synonym>eps</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>electronic mail</synonym>
+   <synonym><![CDATA[e-mail]]></synonym>
+   <synonym>email</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>exit fee</synonym>
+   <synonym><![CDATA[back-end load]]></synonym>
+   <synonym>deferred sales charge</synonym>
+   <synonym>redemption fee</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>extension</synonym>
+   <synonym>margin extension</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>fasb</synonym>
+   <synonym>financial accounting standards board</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>fcm</synonym>
+   <synonym>futures commission merchant</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ fcm/ib]]></synonym>
+   <synonym><![CDATA[futures commission merchant/introducing broker]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>fdic</synonym>
+   <synonym>federal deposit insurance corporation</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>fica</synonym>
+   <synonym>federal insurance contributions act</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>fifo</synonym>
+   <synonym>first in first out</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>fx</synonym>
+   <synonym>exchange rate</synonym>
+   <synonym>forex</synonym>
+   <synonym>foreign exchange</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>family limited partnership</synonym>
+   <synonym>flp</synonym>
+   <synonym>lp</synonym>
+   <synonym>limited partnership</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>federal funds</synonym>
+   <synonym>fed funds</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>federal national mortgage association</synonym>
+   <synonym>fnma</synonym>
+   <synonym>fannie mae</synonym>
+   <synonym>fannie may</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>financial action task force</synonym>
+   <synonym>fatf</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>financial institution services</synonym>
+   <synonym>fis</synonym>
+   <synonym>fis program</synonym>
+   <synonym>fis relationship</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>fiscal period</synonym>
+   <synonym>accounting period</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>flat</synonym>
+   <synonym>zero balance</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>frequently asked questions</synonym>
+   <synonym>faqs</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ front-end load]]></synonym>
+   <synonym><![CDATA[front-load]]></synonym>
+   <synonym>initial sales charge</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>fund</synonym>
+   <synonym>mutual fund</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>fund family</synonym>
+   <synonym>family of funds</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>gepc</synonym>
+   <synonym>graduate estate planning consultant</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>gnma</synonym>
+   <synonym>ginnie mae</synonym>
+   <synonym>ginny may</synonym>
+   <synonym>government national mortgage association</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>gross national product</synonym>
+   <synonym>gnp</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>ira</synonym>
+   <synonym>individual retirement account</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>irs</synonym>
+   <synonym>internal revenue service</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>isin</synonym>
+   <synonym>international securities identification number</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>initial public offering</synonym>
+   <synonym>ipo</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>jgtrra</synonym>
+   <synonym>jobs and growth tax relief reconciliation act of 2003</synonym>
+   <synonym>new income and capital gains tax rates</synonym>
+   <synonym>new tax relief</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>loi</synonym>
+   <synonym>indemnification</synonym>
+   <synonym>letter of instruction</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>late trading</synonym>
+   <synonym><![CDATA[after-hours trading]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>letter of authorization</synonym>
+   <synonym>loa</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>liability</synonym>
+   <synonym>financial obligation</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>local deposit program</synonym>
+   <synonym>ldp</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>market fluctuation</synonym>
+   <synonym>market volatility</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>markup</synonym>
+   <synonym>mark up</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>money</synonym>
+   <synonym>cash</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>morningstar</synonym>
+   <synonym>morning star</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>municipal bond</synonym>
+   <synonym>muni</synonym>
+   <synonym>muni bond</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>nasd</synonym>
+   <synonym>national association of securities dealers</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>nasdaq</synonym>
+   <synonym>national association of securities dealers automated quotation system</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>nav</synonym>
+   <synonym>net asset value</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>niep</synonym>
+   <synonym>national institute for estate planners</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>now</synonym>
+   <synonym>negotiable order of withdrawal</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>nyfe</synonym>
+   <synonym>new york futures exchange</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>nymex</synonym>
+   <synonym>new york mercantile exchange</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>nyse</synonym>
+   <synonym>new york stock exchange</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>newsletter</synonym>
+   <synonym>news letter</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>nfa</synonym>
+   <synonym>national futures association</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ non-sufficient funds]]></synonym>
+   <synonym>insufficient funds</synonym>
+   <synonym>nsf</synonym>
+   <synonym>uncollected funds</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>otc</synonym>
+   <synonym>over the counter</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>objective</synonym>
+   <synonym>goal</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>obq</synonym>
+   <synonym>outside business activity notification form</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>online</synonym>
+   <synonym>on line</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>online banking</synonym>
+   <synonym>internet banking</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>operating independently</synonym>
+   <synonym>oi</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>option paper</synonym>
+   <synonym>option paperwork</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>outside investment account</synonym>
+   <synonym>shell account</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>overdraft</synonym>
+   <synonym>over draft</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>pin</synonym>
+   <synonym>pin number</synonym>
+   <synonym><![CDATA[personal identification no.]]></synonym>
+   <synonym>personal identification number</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>pop</synonym>
+   <synonym>public offering price</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>ptc</synonym>
+   <synonym>private trust company</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>payout</synonym>
+   <synonym>pay out</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>performance</synonym>
+   <synonym>total return</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>performance report</synonym>
+   <synonym>quarterly performance report</synonym>
+   <synonym>quarterly statement</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>portfolio manager</synonym>
+   <synonym>pm</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>power of attorney</synonym>
+   <synonym>poa</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ price-earnings]]></synonym>
+   <synonym><![CDATA[p/e]]></synonym>
+   <synonym>pe ratio</synonym>
+   <synonym><![CDATA[price/earnings ratio]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ price/sales]]></synonym>
+   <synonym><![CDATA[p/s ratio]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ price-to-book]]></synonym>
+   <synonym><![CDATA[p/b ratio]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>prospectus</synonym>
+   <synonym>disclosure documents</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>put</synonym>
+   <synonym>sell option</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>qualified domestic relations order</synonym>
+   <synonym>qdro</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>reit</synonym>
+   <synonym>real estate investment trust</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>roa</synonym>
+   <synonym>return on assets</synonym>
+   <synonym>rights of accumulation</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>roe</synonym>
+   <synonym>return on equity</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>roi</synonym>
+   <synonym>return on investment</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>rank</synonym>
+   <synonym>weight</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>rate</synonym>
+   <synonym>interest rate</synonym>
+   <synonym>yield</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>real estate</synonym>
+   <synonym>housing</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>regulation</synonym>
+   <synonym>reg</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>rep</synonym>
+   <synonym>registered rep</synonym>
+   <synonym>representative</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>required begin date</synonym>
+   <synonym>rbd</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>required minimum distribution</synonym>
+   <synonym>rmd</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>retirement plan</synonym>
+   <synonym>qualified plan</synonym>
+   <synonym>qualified retirement plan</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>roth ira</synonym>
+   <synonym>roth</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>routing number</synonym>
+   <synonym>aba number</synonym>
+   <synonym><![CDATA[aba routing no.]]></synonym>
+   <synonym>aba routing number</synonym>
+   <synonym>routing instructions</synonym>
+   <synonym><![CDATA[routing no.]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ s&p]]></synonym>
+   <synonym><![CDATA[standard & poor's]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>sec</synonym>
+   <synonym>securities and exchange commission</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>sipc</synonym>
+   <synonym>securities investor protection agency</synonym>
+   <synonym>securities investor protection corporation</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>sma</synonym>
+   <synonym>managed account</synonym>
+   <synonym>separate account</synonym>
+   <synonym>separately managed account</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ safe harbor 401(k)]]></synonym>
+   <synonym><![CDATA[safe harbor 401(k]]></synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ sep-ira]]></synonym>
+   <synonym>sep</synonym>
+   <synonym>simplified employee pension</synonym>
+   <synonym>simplified employee pension ira</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ simple-ira]]></synonym>
+   <synonym>savings incentive match plan ira</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>social security number</synonym>
+   <synonym>ssn</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>statement</synonym>
+   <synonym>account statement</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>statement design tool</synonym>
+   <synonym>sdt</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>strike price</synonym>
+   <synonym>exercise price</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>style</synonym>
+   <synonym>investment approach</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>survivor variable universal life</synonym>
+   <synonym>svul</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>systematic</synonym>
+   <synonym>periodic</synonym>
+   <synonym>scheduled</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>tin</synonym>
+   <synonym>tax id</synonym>
+   <synonym>tax identification number</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>technical support help desk</synonym>
+   <synonym>tshd</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>third</synonym>
+   <synonym>3rd</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>this time only</synonym>
+   <synonym>tto</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>traditional ira</synonym>
+   <synonym>participant ira</synonym>
+   <synonym>regular ira</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>transfer on death</synonym>
+   <synonym>tod</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>ugma</synonym>
+   <synonym>uniform gift to minors act</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>uit</synonym>
+   <synonym>investment trust</synonym>
+   <synonym>unit investment trust</synonym>
+   <synonym>unit trust</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>unrelated business taxable income</synonym>
+   <synonym>ubti</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>variable annuity</synonym>
+   <synonym>va</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>variable rate</synonym>
+   <synonym>adjustable rate</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>variable universal life</synonym>
+   <synonym>vul</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym><![CDATA[ web-based training]]></synonym>
+   <synonym>wbt</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>wire transfer</synonym>
+   <synonym>federal funds wire</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>withholding</synonym>
+   <synonym><![CDATA[w/h]]></synonym>
+   <synonym>with holding</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>ytd</synonym>
+   <synonym>year to date</synonym>
+</synonymgroup>
+<synonymgroup>
+   <synonym>year end</synonym>
+   <synonym>tax season</synonym>
+</synonymgroup>
+</synonymgroups>

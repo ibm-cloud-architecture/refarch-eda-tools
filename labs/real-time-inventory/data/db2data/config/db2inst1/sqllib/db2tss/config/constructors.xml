@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<constructors>
+   <!-- 
+  <constructor>
+     <name></name>             Unique constructor name
+	 <class></class>           Full class constructor name including package 
+	 <batchSize></batchSize>   Constructor batchSize defines the maximum 
+	                            document array size that can be populated at a time
+	 <customConfig>
+	              <![CDATA[ 
+	                  <parameter>a</parameter>
+	                  <parameter>b</parameter>
+	               ]]>
+	 </customConfig> The customConfig value can be any string or XML fragment.
+	                  If special characters or XML fragments are used then 
+	                  CDATA tag need to be used in this section.
+	            	  For example, the value can be the location of the file with custom	
+			          constructor registry information. This information is sent to the 
+				      constructor one time at run time upon initialization.
+  </constructor>
+  -->
+</constructors>
