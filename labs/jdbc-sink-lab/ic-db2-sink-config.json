@@ -9,6 +9,14 @@
     "connection.password": "xrqk@3mz16qss7mt",
     "connection.ds.pool.size": "1",
     "insert.mode.databaselevel": "true",
-    "table.name.format": "WSP84669.INVENTORY"
+    "table.name.format": "WSP84669.INVENTORY",
+    "value.fields": [
+      {"type": "string","optional": "false","field": "storeName"},
+      {"type": "string","optional": "false","field": "sku"},
+      {"type": "decimal","optional": "true","field": "id"},
+      {"type": "decimal","optional": "true","field": "quantity"},
+      {"type": "decimal","optional": "true","field": "price"},
+      {"type": "string","optional": "true","field": "timestamp"}
+    ]
   }
 }

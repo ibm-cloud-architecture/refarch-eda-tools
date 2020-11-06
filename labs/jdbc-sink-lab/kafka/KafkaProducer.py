@@ -54,7 +54,7 @@ class KafkaProducer:
         logging.info("Send " + dataStr + " with key " + keyName + " to " + self.topic_name)
         
         self.producer.produce(self.topic_name,
-                           key=keyName.encode('utf-8'),
+                           # key=keyName.encode('utf-8'),
                            value=dataStr.encode('utf-8'),
                            callback=self.delivery_report)
         self.producer.flush()
