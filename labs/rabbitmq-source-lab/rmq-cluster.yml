@@ -5,12 +5,11 @@ metadata:
   annotations:
     openshift.io/sa.scc.supplemental-groups: 999/1
     openshift.io/sa.scc.uid-range: 999/1
- 
 ---
 apiVersion: rabbitmq.com/v1beta1
 kind: RabbitmqCluster
 metadata:
-  name: jb-rmqcluster
+  name: rmqcluster
   namespace:  rabbitmq-cluster
 spec:
   replicas: 1
