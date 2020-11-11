@@ -1,5 +1,11 @@
 # Different tools for EDA project
 
+This repository includes different tools to be used for testing or code to support the EDA bootcamp labs.
+
+## Labs
+
+* [Event Streams Managed service on cloud]()
+
 ## Latency measurement
 
 To measure latency we need to get the timestamp of the input record at the first topic and the timestamp at the record from the last topic. The following diagram presents the different timestamps and latency goals we want to measure:
