@@ -9,7 +9,8 @@ labs/real-time-inventory/data/
 labs/**/**data/**/
 labs/**/.env
 labs/**/logs/
-labs/**/es-cert.p12
+labs/**/*.p12
+labs/**/*.pem
 test-tools/perf-producer-app/target/
 IBMEventStreams_GettingStarted/src/main/liberty/config/server.env
 IBMEventStreams_GettingStarted/src/main/liberty/config/resources/security/

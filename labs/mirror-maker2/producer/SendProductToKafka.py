@@ -1,5 +1,6 @@
 from confluent_kafka import Producer, KafkaError
 import json, os, sys
+import numpy as np
 
 '''
 This is a basic python code to read products data and send them to kafka.
@@ -61,6 +62,13 @@ def readProducts(filename):
     p = open(filename,'r')
     return json.load(p)
 
+def generateProducts(nb_record):
+    products = []
+    for i in range(1,nb_records):
+        p = { "product_id": "T" + str(i), "description": "Product " + str(i), "target_temperature": np.random.normal(4,2),"target_humidity_level": 0.4,"content_type": 1}
+        products.append(p)
+    return products
+
 def signal_handler(sig,frame):
     producer.close()
     sys.exit(0)
@@ -68,24 +76,30 @@ def signal_handler(sig,frame):
 def parseArguments():
     version="0"
     arg2="./data/products2.json"
+    nb_records = 0
     if len(sys.argv) == 1:
-        print("Usage: SendProductToKafka  --file datafilename ")
+        print("Usage: SendProductToKafka  [--file datafilename] [--random n] ")
         exit(1)
     else:
         for idx in range(1, len(sys.argv)):
             arg=sys.argv[idx]
             if arg == "--file":
                 arg2=sys.argv[idx+1]
+            if arg == "--random":
+                nb_records=int(sys.argv[idx+1])
             if arg == "--help":
                 print("Send product json documents to a kafka cluster. Use environment variables KAFKA_BROKERS")
                 print(" and KAFKA_PWD is the cluster accept sasl connection with token user")
                 print(" and KAFKA_CERT foto define the path to the pem file, for TLS communication")
                 exit(0)
-    return arg2
+    return nb_records,arg2
 
 if __name__ == "__main__":
-    filename = parseArguments()
-    products = readProducts(filename)
+    nb_records,filename = parseArguments()
+    if (nb_records > 0):
+        products = generateProducts(nb_records)
+    else:
+        products = readProducts(filename)
     try:
         publishEvent(SOURCE_TOPIC,products)
     except KeyboardInterrupt:
