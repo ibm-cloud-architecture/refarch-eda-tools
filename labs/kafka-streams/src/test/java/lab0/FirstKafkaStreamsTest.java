@@ -37,7 +37,9 @@ public class FirstKafkaStreamsTest {
         props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "dummmy:2345");
         props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
+        
         final StreamsBuilder builder = new StreamsBuilder();
+        
         KStream<String, String> basicColors = builder.stream(inTopicName,Consumed.with(Serdes.String(), Serdes.String()));
         basicColors.peek((key, value) -> System.out.println("PRE-FILTER: key=" + key + ", value=" + value))
             .filter((key, value) -> ("BLUE".equalsIgnoreCase(value)))

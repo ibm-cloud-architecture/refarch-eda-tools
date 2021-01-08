@@ -6,8 +6,9 @@ labs/mq-sink-lab/cp4i/mq-sink.json
 labs/kconnectors/libs/*.jar
 labs/kconnectors/kafka-connect**/
 labs/real-time-inventory/data/
-labs/**/data/**/
+labs/**/**data/**/
 labs/**/.env
+labs/**/logs/
 test-tools/perf-producer-app/target/
 IBMEventStreams_GettingStarted/src/main/liberty/config/server.env
 IBMEventStreams_GettingStarted/src/main/liberty/config/resources/security/
