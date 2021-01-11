@@ -1,0 +1,68 @@
+apiVersion: eventstreams.ibm.com/v1alpha1
+kind: KafkaMirrorMaker2
+metadata:
+  name: mm2
+  namespace: eventstreams
+spec:
+  template:
+    pod:
+      metadata:
+        annotations:
+          eventstreams.production.type: CloudPakForIntegrationNonProduction
+          productCloudpakRatio: "2:1"
+          productChargedContainers: mm2-mirrormaker2
+          productVersion: 10.1.0
+          productID: 2a79e49111f44ec3acd89608e56138f5
+          cloudpakName: IBM Cloud Pak for Integration
+          cloudpakId: c8b82d189e7545f0892db9ef2731b90d
+          productName: IBM Event Streams for Non Production
+          cloudpakVersion: 2020.3.1
+          productMetric: VIRTUAL_PROCESSOR_CORE
+  version: 2.6.0
+  replicas: 1
+  connectCluster: "es-tgt"
+  logging:
+    type: inline
+    loggers:
+      connect.root.logger.level: "INFO"
+  clusters:
+  - alias: "es-src"
+    bootstrapServers: light-es-kafka-bootstrap-eventstreams.gse-eda-2020-10-3-0143c5dd31acd8e030a1d6e0ab1380e3-0000.us-east.containers.appdomain.cloud:443
+    config:
+      config.storage.replication.factor: 1
+      offset.storage.replication.factor: 1
+      status.storage.replication.factor: 1
+      ssl.endpoint.identification.algorithm: https
+    tls:
+      trustedCertificates:
+        - certificate: ca.crt
+          secretName: light-es-cluster-ca-cert
+    authentication:
+      username: app-user
+      type: scram-sha-512
+      passwordSecret:
+        password: password
+        key: user.key
+        secretName: app-user
+  - alias: "es-tgt"
+    bootstrapServers: gse-eda-dev-kafka-bootstrap.eventstreams.svc:9093
+    config:
+      config.storage.replication.factor: 1
+      offset.storage.replication.factor: 1
+      status.storage.replication.factor: 1
+      ssl.endpoint.identification.algorithm: https
+    tls:
+      trustedCertificates:
+        - certificate: ca.crt
+          secretName: gse-eda-dev-cluster-ca-cert
+    authentication:
+      type: tls
+      certificateAndKey:
+          certificate: user.crt
+          key: user.key
+          secretName: app-user-tls 
+  mirrors:
+  - sourceCluster: "es-src"
+    targetCluster: "es-tgt"
+    topicsPattern: products
+    target.enabled: true

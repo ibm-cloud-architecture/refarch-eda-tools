@@ -4,7 +4,9 @@ This repository includes different tools to be used for testing or code to suppo
 
 ## Labs
 
-* [Event Streams Managed service on cloud]()
+* [Schema registry with Event Streams Managed service on cloud](labs/es-cloud-schema-lab/README.md)
+* [Schema registry with Cloud Pak for integration](labs/es-cp4i-schema-lab-v10/README.md)
+* [Mirror Maker 2](mirror-maker2/README.md)
 
 ## Latency measurement
 
@@ -15,7 +17,7 @@ To measure latency we need to get the timestamp of the input record at the first
 * TS1: is a timestamp added to the record creation time. If the user did not provide a timestamp, the producer will stamp the record with its current time. The timestamp eventually used by Kafka depends on the timestamp type configured for the topic. If the topic is configured to use `CreateTime`, the timestamp in the producer record will be used by the broker. If the topic is configured to use `LogAppendTime`, the timestamp in the producer record will be overwritten by the broker with the broker local time when it appends the message to its log.
 * TS2: is available only if the input topic uses the append log time stamp, or it will be TS1 otherwise.
 * TS3: is the append log time stamp, on last output topic
-* TS4: is a time stamp at runtime around the poll method of the consumer code. This may not be a relevant timestamp if we focus just on the delivery to topic.TS4-TS3 is really dependant of the consumer runtime processing a loading logic: for example a records in the topic could have been persisted with a timestamp of two days ago, the consumer will load it and see a latency of two days. For performance testing we encourage to start the consumer before the producer and load from the latest offset, be part of its unique consumer group, and auto commit read offset.
+* TS4: is a time stamp at runtime around the poll method of the consumer code. This may not be a relevant timestamp if we focus just on the delivery to topic.TS4-TS3 is really dependent of the consumer runtime processing a loading logic: for example a records in the topic could have been persisted with a timestamp of two days ago, the consumer will load it and see a latency of two days. For performance testing we encourage to start the consumer before the producer and load from the latest offset, be part of its unique consumer group, and auto commit read offset.
 
 It is important to agree on what is the expected latency to measure: arrow 1 or 2 in previous figure. The difference between TS3 and TS4 is variable and depends on when the consumer starts and the processing done. So the relevant latency measures could be (TS3 - TS1) or (TS3 - TS2).
 
@@ -38,7 +40,7 @@ Those timestamps are per message, so a performance monitoring tool needs to keep
 
 ## Kafka performance considerations
 
-As a distributed processing and persistent system, Kafka is not an easy beast for assessing throughput and scalability. We will try to summaryze our studies in this section. Some kafka deployments are able to process 30+ millions events per second... so how to do that?
+As a distributed processing and persistent system, Kafka is not an easy beast for assessing throughput and scalability. We will try to summarize our studies in this section. Some Kafka deployments are able to process 30+ millions events per second... so how to do that?
 
 * Latency and throughput are orthogonal dimension: Understand the needs for both, and the type of application traffic: near real time, real time processing, data reliability...
 * Data reliability impacts performance: number of replicas and acknowledge level
@@ -54,7 +56,7 @@ As a distributed processing and persistent system, Kafka is not an easy beast fo
 
 ### Producer
 
-For the producer the following parameters impact throughtput and latency:
+For the producer the following parameters impact throughput and latency:
 
 * Tuning the batch.size as increasing batch size could result in higher throughput. A 512kB gives good result for getting around 1.5GB throughput.
 * linger: when records comes from external source, the producer could groups records in the batch, but publishes once the delay goes over the `linger.ms` settings. In low-load scenarios, this improves throughput by sacrificing latency.
@@ -88,7 +90,7 @@ TBC
 
 ## Performance test tool in Java
 
-Considering looking at the producer and consumer heap size. 
+Considering looking at the producer and consumer heap size.
 Revisit the garbage collection settings. Remember that GC impact latency as the JVM is paused while doing GC. As a core principle, the more memory you give the JVM, the lower the collection frequency. The more you have short lived object the higher the cost of GC reclamation.
 
 * Heap size control: -Xmx for maximum heap size and -Xms for heap mem start size
