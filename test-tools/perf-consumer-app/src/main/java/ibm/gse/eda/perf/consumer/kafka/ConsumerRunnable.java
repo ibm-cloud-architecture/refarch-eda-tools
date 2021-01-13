@@ -51,6 +51,7 @@ public class ConsumerRunnable implements Runnable {
             new ConsumerRebalanceListener() {
                 @Override
                 public void onPartitionsRevoked(Collection<TopicPartition> partitions) {
+                    // do something
                 }
 
                 @Override

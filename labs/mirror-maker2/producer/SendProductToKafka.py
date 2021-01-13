@@ -8,9 +8,10 @@ This is a good scenario for sharing reference data
 '''
 KAFKA_BROKERS = os.getenv('KAFKA_BROKERS')
 KAFKA_CERT = os.getenv('KAFKA_CERT','')
-KAFKA_USER =  os.getenv('KAFKA_USER','token')
+KAFKA_USER =  os.getenv('KAFKA_USER','')
 KAFKA_PWD =  os.getenv('KAFKA_PWD','')
-KAFKA_SASL_MECHANISM=  os.getenv('KAFKA_SASL_MECHANISM','SCRAM-SHA-512')
+KAFKA_SASL_MECHANISM=  os.getenv('KAFKA_SASL_MECHANISM','')
+KAFKA_SECURITY_PROTOCOL= os.getenv('KAFKA_SECURITY_PROTOCOL','')
 SOURCE_TOPIC='products'
 
 options ={
@@ -20,10 +21,12 @@ options ={
     'request.timeout.ms' : 15000
 }
 
-options['security.protocol'] = 'SASL_SSL'
-options['sasl.mechanisms'] = KAFKA_SASL_MECHANISM
-options['sasl.username'] = KAFKA_USER
-options['sasl.password'] = KAFKA_PWD
+if (KAFKA_SECURITY_PROTOCOL != ''):
+    options['security.protocol'] = KAFKA_SECURITY_PROTOCOL
+if (KAFKA_SASL_MECHANISM != ''):
+    options['sasl.mechanisms'] = KAFKA_SASL_MECHANISM
+    options['sasl.username'] = KAFKA_USER
+    options['sasl.password'] = KAFKA_PWD
 
 if (KAFKA_CERT != '' ):
     options['ssl.ca.location'] = KAFKA_CERT

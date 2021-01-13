@@ -20,6 +20,7 @@ spec:
           productMetric: VIRTUAL_PROCESSOR_CORE
   version: 2.6.0
   replicas: 1
+  metrics: {}
   connectCluster: "es-tgt"
   logging:
     type: inline
