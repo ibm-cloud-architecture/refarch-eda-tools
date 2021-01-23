@@ -12,7 +12,7 @@ KAFKA_USER =  os.getenv('KAFKA_USER','')
 KAFKA_PWD =  os.getenv('KAFKA_PWD','')
 KAFKA_SASL_MECHANISM=  os.getenv('KAFKA_SASL_MECHANISM','')
 KAFKA_SECURITY_PROTOCOL= os.getenv('KAFKA_SECURITY_PROTOCOL','')
-SOURCE_TOPIC='products'
+SOURCE_TOPIC = os.getenv('TOPIC','products')
 
 options ={
     'bootstrap.servers': KAFKA_BROKERS,
