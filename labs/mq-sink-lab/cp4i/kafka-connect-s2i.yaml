@@ -1,0 +1,43 @@
+apiVersion: eventstreams.ibm.com/v1beta1
+kind: KafkaConnectS2I
+metadata:
+  name: eda-connect-cluster
+  annotations:
+    eventstreams.ibm.com/use-connector-resources: "true"
+spec:
+  version: 2.5.0
+  replicas: 1
+  bootstrapServers: sandbox-rp-kafka-bootstrap.eventstreams.svc:9093
+  template:
+    pod:
+      imagePullSecrets: []
+      metadata:
+        annotations:
+          eventstreams.production.type: CloudPakForIntegrationNonProduction
+          productID: 2a79e49111f44ec3acd89608e56138f5
+          productName: IBM Event Streams for Non Production
+          productVersion: 10.0.0
+          productMetric: VIRTUAL_PROCESSOR_CORE
+          productChargedContainers: eda-connect-cluster-connect
+          cloudpakId: c8b82d189e7545f0892db9ef2731b90d
+          cloudpakName: IBM Cloud Pak for Integration
+          cloudpakVersion: 2020.2.1
+          productCloudpakRatio: "2:1"
+  config:
+    group.id: connect-cluster
+    offset.storage.topic: connect-cluster-offsets
+    config.storage.topic: connect-cluster-configs
+    status.storage.topic: connect-cluster-status
+    config.storage.replication.factor: 3
+    offset.storage.replication.factor: 3
+    status.storage.replication.factor: 3
+  tls:
+    trustedCertificates:
+    - secretName: sandbox-rp-cluster-ca-cert
+      certificate: ca.crt
+  authentication:
+    type: tls
+    certificate: user.crt
+    key: user.key
+    secretName: sandbox-rp-tls-cred
+    

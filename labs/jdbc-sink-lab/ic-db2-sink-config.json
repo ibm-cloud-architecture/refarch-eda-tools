@@ -1,0 +1,22 @@
+{
+  "name": "jdbc-sink-connector",
+  "config": {
+    "connector.class": "com.ibm.eventstreams.connect.jdbcsink.JDBCSinkConnector",
+    "tasks.max": "1",
+    "topics": "inventory",
+    "connection.url": "jdbc:db2://dashdb-txn-sbox-yp-dal09-11.services.dal.bluemix.net:50001/BLUDB:sslConnection=true;",
+    "connection.user": "WSP84669",
+    "connection.password": "xrqk@3mz16qss7mt",
+    "connection.ds.pool.size": "1",
+    "insert.mode.databaselevel": "true",
+    "table.name.format": "WSP84669.INVENTORY",
+    "value.fields": [
+      {"type": "string","optional": "false","field": "storeName"},
+      {"type": "string","optional": "false","field": "sku"},
+      {"type": "decimal","optional": "true","field": "id"},
+      {"type": "decimal","optional": "true","field": "quantity"},
+      {"type": "decimal","optional": "true","field": "price"},
+      {"type": "string","optional": "true","field": "timestamp"}
+    ]
+  }
+}

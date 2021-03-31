@@ -1,0 +1,24 @@
+apiVersion: mq.ibm.com/v1beta1
+kind: QueueManager
+metadata:
+  name: eda-mq-lab
+spec:
+  version: 9.2.0.0-r1
+  license:
+    accept: true
+    license: L-RJON-BN7PN3
+    use: NonProduction
+  web:
+    enabled: true
+  queueManager:
+    name: "EDAQMGR1"
+    storage:
+      queueManager:
+        type: ephemeral
+  template:
+    pod:
+      containers:
+       - name: qmgr
+         env:
+         - name: MQSNOAUT
+           value: "yes"

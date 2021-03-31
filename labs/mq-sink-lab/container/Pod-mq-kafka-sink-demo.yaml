@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mq-kafka-sink-demo
+  labels:
+    app: mq-kafka-sink-demo-app
+  namespace: mq-demo
+spec:
+  containers:
+    - name: mq-kafka-sink-demo
+      image: ibmcase/mq-kafka-sink-demo:0.0.1
+      envFrom:
+        - configMapRef:
+            name: mq-kafka-sink-demo-config

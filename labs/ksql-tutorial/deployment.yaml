@@ -1,0 +1,146 @@
+# should have two secrets 
+# oc create secret generic kafka-sasl --from-literal SASL-JAAS-CONFIG='org.apache.kafka.common.security.plain.PlainLoginModule required username="XXXXX" password="api_key_XXXXX";' 
+# oc create secret generic kafka-config --from-literal kafka-bootstrap-server=XXXXX --from-literal kafka-api-key=XXXXXXX
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ksqldb-server
+  labels:
+    app: ksqldb-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ksqldb-server
+  template:
+    metadata:
+      labels:
+        app: ksqldb-server
+    spec:
+      containers:
+      - securityContext:
+          runAsUser: 1000599000
+        name: ksqldb-server
+        image: bmainaliibm/ksql-server:0.11.0
+        ports:
+        - containerPort: 8088
+        env:
+        - name: KSQL_BOOTSTRAP_SERVERS
+          valueFrom:
+            secretKeyRef:
+              key: kafka-bootstrap-server
+              name: kafka-config
+        - name: KAFKA_API_KEY
+          valueFrom:
+            secretKeyRef:
+              key: kafka-api-key
+              name: kafka-config
+        - name: KSQL_LISTENERS
+          value: http://0.0.0.0:8088
+        - name: KSQL_KSQL_STREAMS_REPLICATION_FACTOR
+          value: "3"
+        - name: KSQL_KSQL_LOGGING_PROCESSING_TOPIC_REPLICATION_FACTOR
+          value: "3"
+        - name: KSQL_KSQL_LOGGING_PROCESSING_STREAM_AUTO_CREATE
+          value: "true"
+        - name: KSQL_KSQL_LOGGING_PROCESSING_TOPIC_AUTO_CREATE
+          value: "true"
+        - name: KSQL_SASL_JAAS_CONFIG
+          valueFrom:
+            secretKeyRef:
+              key: SASL-JAAS-CONFIG
+              name: kafka-sasl
+        - name: KSQL_KSQ_SASL_JAAS_CONFIG
+          valueFrom:
+            secretKeyRef:
+              key: SASL-JAAS-CONFIG
+              name: kafka-sasl 
+        - name: KSQL_SASL_MECHANISM
+          value: PLAIN
+        - name: KSQL_SECURITY_PROTOCOL
+          value: SASL_SSL
+        - name: KSQL_spring.cloud.stream.kafka.binder.replicationFactor
+          value: "3"
+        - name: KSQL_spring.cloud.stream.kafka.streams.binder.replicationFactor
+          value: "3"
+        - name: KSQL_spring.cloud.stream.kafka.streams.binder.configuration.replication.factor
+          value: "3"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ksqldb-server-svc
+  labels:
+    run: ksqldb-server-svc
+spec:
+  ports:
+  - port: 8088
+    targetPort: 8088
+    protocol: TCP
+    name: http
+  selector:
+    app: ksqldb-server
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ksqldb-cli
+  labels:
+    app: ksqldb-cli
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ksqldb-cli
+  template:
+    metadata:
+      labels:
+        app: ksqldb-cli
+    spec:
+      containers:
+      - name: ksqldb-cli
+        securityContext:
+          runAsUser: 1000599000
+          # allowPrivilegeEscalation: true
+        image: bmainaliibm/ksqldb-cli:0.11.0
+        command: [ "/bin/bash", "-c", "--" ]
+        args: [ 'while true; do sleep 30; echo "sleeping 30 seconds. on terminal tab type ksql ksql-server-ip:port" ; done;' ]        # args: ["ksql"]
+        env:
+        - name: KSQL_KSQL_streams.bootstrap.servers
+          valueFrom:
+            secretKeyRef:
+              key: kafka-bootstrap-server
+              name: kafka-config
+        - name: KAFKA_API_KEY
+          valueFrom:
+            secretKeyRef:
+              key: kafka-api-key
+              name: kafka-config
+              optional: true
+        - name: KSQL_KSQ_SASL_JAAS_CONFIG
+          valueFrom:
+            secretKeyRef:
+              key: SASL-JAAS-CONFIG
+              name: kafka-sasl
+        - name: KSQL_KSQ_SECURITY_PROTOCOL
+          value: SASL_SSL
+        - name: KSQL_KSQ_SASL_MECHANISM
+          value: PLAIN
+        - name: KSQL_spring.cloud.stream.kafka.binder.replicationFactor
+          value: "3"
+        - name: KSQL_spring.cloud.stream.kafka.streams.binder.replicationFactor
+          value: "3"
+        - name: KSQL_spring.cloud.stream.kafka.streams.binder.configuration.replication.factor
+          value: "3"
+
+---
+
+apiVersion: v1
+kind: Route
+metadata:
+  name: ksqldb-server-route
+spec:
+  to:
+    kind: Service
+    name: ksqldb-server-svc

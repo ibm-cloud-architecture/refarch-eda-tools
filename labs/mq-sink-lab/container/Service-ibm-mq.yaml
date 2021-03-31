@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mq-service
+  namespace: mq-demo
+spec:
+  selector:
+    app: mq-kafka-sink-demo-app
+  ports:
+    - name: mq-port
+      protocol: TCP
+      port: 1414
+      targetPort: 1414
+    - name: mq-portal
+      protocol: TCP
+      port: 9443
+      targetPort: 9443
+    - name: mq-dunno
+      protocol: TCP
+      port: 9157
+      targetPort: 9157

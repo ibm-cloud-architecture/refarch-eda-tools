@@ -1,0 +1,14 @@
+{
+  "name": "jdbc-sink-connector",
+  "config": {
+    "connector.class": "com.ibm.eventstreams.connect.jdbcsink.JDBCSinkConnector",
+    "tasks.max": "1",
+    "topics": "inventory",
+    "connection.url": "jdbc:db2://localhost:50000/BLUDB:sslConnection=true;",
+    "connection.user": "db2inst1",
+    "connection.password": "db2inst1",
+    "connection.ds.pool.size": "1",
+    "insert.mode.databaselevel": "true",
+    "table.name.format": "db2inst1.INVENTORY"
+  }
+}

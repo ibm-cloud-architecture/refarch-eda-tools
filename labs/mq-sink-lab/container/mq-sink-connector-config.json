@@ -1,0 +1,21 @@
+{
+  "name": "mq-sink-connector",
+  "config":
+  {
+      "connector.class": "com.ibm.eventstreams.connect.mqsink.MQSinkConnector",
+      "tasks.max": "1",
+      "topics": "KAFKA_TOPICS",
+
+      "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+      "value.converter": "org.apache.kafka.connect.storage.StringConverter",
+
+      "mq.queue.manager": "MQ_QUEUE_MANAGER",
+      "mq.connection.name.list": "MQ_HOST(MQ_PORT)",
+      "mq.user.name": "MQ_USER",
+      "mq.password": "MQ_PASSWORD",
+      "mq.user.authentication.mqcsp": true,
+      "mq.channel.name": "MQ_CHANNEL",
+      "mq.queue": "MQ_QUEUE",
+      "mq.message.builder": "com.ibm.eventstreams.connect.mqsink.builders.DefaultMessageBuilder"
+  }
+}
