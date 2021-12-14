@@ -18,4 +18,4 @@ The script clone the  github source repository for each selected connector and t
 docker build -t ibmcase/kconnect:0.1.0  .
 ```
 
-This image will be used in the different lab.
+This image will be used in the different labs.
