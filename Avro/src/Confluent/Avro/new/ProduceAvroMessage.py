@@ -24,7 +24,7 @@ if __name__ == '__main__':
     print("[MAIN] ----------------------------------------")
 
     # Create the Kafka Avro Producer
-    kafka_avro_producer = KafkaAvroProducer(json.dumps(event_value_schema.to_json()))
+    kafka_avro_producer = KafkaAvroProducer(json.dumps(event_value_schema.to_json()),args.topic)
 
     # Publish the event
     kafka_avro_producer.publishEvent(event_key, event_value, args.topic)
