@@ -4,24 +4,37 @@ from confluent_kafka import KafkaError
 from confluent_kafka import SerializingProducer
 from confluent_kafka.serialization import StringSerializer
 from confluent_kafka.schema_registry import SchemaRegistryClient
+from confluent_kafka.schema_registry import Schema
 from confluent_kafka.schema_registry.avro import AvroSerializer
 
 class KafkaAvroProducer:
 
-    def __init__(self, value_schema, groupID = 'KafkaAvroProducer'):
+    def __init__(self, value_schema, topic_name):
         
         # Schema Registry configuration
         self.schema_registry_conf = self.getSchemaRegistryConf()
         # Schema Registry Client
         self.schema_registry_client = SchemaRegistryClient(self.schema_registry_conf)
 
+        # Print information about the schema
+        print("[KafkaAvroProducer] - Schema Information:")
+        print("[KafkaAvroProducer] - ===================")
+        print("[KafkaAvroProducer] - Version IDs for the Schema: " ,  topic_name + "-value", self.schema_registry_client.get_versions(topic_name + "-value"))
+        registeredSchema =  self.schema_registry_client.lookup_schema(topic_name + "-value", Schema(value_schema,"AVRO"))
+        print("[KafkaAvroProducer] - Schema: " + registeredSchema.schema.schema_str)
+        print("[KafkaAvroProducer] - Schema type: " + registeredSchema.schema.schema_type)
+        print("[KafkaAvroProducer] - Schema ID: " , registeredSchema.schema_id)
+        print("[KafkaAvroProducer] - Schema subject: " + registeredSchema.subject)
+        print("[KafkaAvroProducer] - Schema version: " , registeredSchema.version)
+        # exit(0)
+
         # String Serializer for the key
         self.key_serializer = StringSerializer('utf_8')
         # Avro Serializer for the value
-        self.value_serializer = AvroSerializer(value_schema, self.schema_registry_client)
+        self.value_serializer = AvroSerializer(value_schema, self.schema_registry_client, None, {'auto.register.schemas': False})
         
         # Get the producer configuration
-        self.producer_conf = self.getProducerConfiguration(groupID)
+        self.producer_conf = self.getProducerConfiguration()
         # Create the producer
         self.producer = SerializingProducer(self.producer_conf)
 
@@ -42,11 +55,10 @@ class KafkaAvroProducer:
             print('[KafkaAvroProducer] - [ERROR] - There is no SCHEMA_REGISTRY_URL environment variable')
             exit(1)
     
-    def getProducerConfiguration(self, groupID):
+    def getProducerConfiguration(self):
         try:
             options ={
                     'bootstrap.servers': os.environ['KAFKA_BROKERS'],
-                    'group.id': groupID,
                     'key.serializer': self.key_serializer,
                     'value.serializer': self.value_serializer
             }

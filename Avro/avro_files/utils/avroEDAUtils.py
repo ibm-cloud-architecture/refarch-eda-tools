@@ -16,6 +16,12 @@ def getDefaultEventValueSchema(schema_files_location):
   default_event_value_schema = LoadAvsc(schema_files_location + "/default_value.avsc", known_schemas)
   return default_event_value_schema
 
+def getDefaultEventValueSchemaConsumer(schema_files_location):
+  # Get the default event value data schema
+  known_schemas = avro.schema.Names()
+  default_event_value_schema = LoadAvsc(schema_files_location + "/default_value.avsc", known_schemas)
+  return default_event_value_schema
+
 def getDefaultEventKeySchema(schema_files_location):
   # Get the default event key data schema
   known_schemas = avro.schema.Names()

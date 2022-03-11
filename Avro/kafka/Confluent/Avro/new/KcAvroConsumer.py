@@ -18,7 +18,9 @@ class KafkaAvroConsumer:
         # Key Deserializer
         self.key_deserializer = StringDeserializer('utf_8')
         # Value Deserializer
-        # Presenting the schema to the Avro Deserializer is needed at the moment. In the future it might change
+        # Presenting the schema to the Avro Deserializer is needed at the moment. In the future it might change.
+        # Presenting the schema to the Avro Deserializer allows the consumer to get a schema version fixed for consuming messages as opposed
+        # to using the schema the message was serialized with (as the message travels with the schema id).
         # https://github.com/confluentinc/confluent-kafka-python/issues/834
         self.value_deserializer = AvroDeserializer(value_schema,self.schema_registry_client)
 
