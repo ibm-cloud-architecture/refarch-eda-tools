@@ -13,6 +13,10 @@ if __name__ == '__main__':
     # Get the avro schemas for the message's value. We are not sending the key Avro serialized but it can be if needed.
     event_value_schema = getDefaultEventValueSchema(os.getcwd().split("/src")[0] + "/avro_files")
 
+    print("[MAIN] - WARNING: Make sure the schema you have registered in Event Streams is identical comma by comma and space by space as:")
+    print("[MAIN] - ", event_value_schema)
+    print("[MAIN] - More info in https://github.com/ibm-cloud-architecture/refarch-eda-tools/issues/15")
+
     # Create the event
     event_key = "A key"
     event_value = {"message" : "This is an avro test message using the new APIs"}

@@ -17,21 +17,23 @@ class KafkaAvroProducer:
         self.schema_registry_client = SchemaRegistryClient(self.schema_registry_conf)
 
         # Print information about the schema
+
         print("[KafkaAvroProducer] - Schema Information:")
         print("[KafkaAvroProducer] - ===================")
         print("[KafkaAvroProducer] - Version IDs for the Schema: " ,  topic_name + "-value", self.schema_registry_client.get_versions(topic_name + "-value"))
         registeredSchema =  self.schema_registry_client.lookup_schema(topic_name + "-value", Schema(value_schema,"AVRO"))
-        print("[KafkaAvroProducer] - Schema: " + registeredSchema.schema.schema_str)
+        print("[KafkaAvroProducer] - Schema: \n", json.dumps(json.loads(registeredSchema.schema.schema_str),indent=4, sort_keys=True))
         print("[KafkaAvroProducer] - Schema type: " + registeredSchema.schema.schema_type)
         print("[KafkaAvroProducer] - Schema ID: " , registeredSchema.schema_id)
         print("[KafkaAvroProducer] - Schema subject: " + registeredSchema.subject)
         print("[KafkaAvroProducer] - Schema version: " , registeredSchema.version)
-        # exit(0)
 
         # String Serializer for the key
         self.key_serializer = StringSerializer('utf_8')
         # Avro Serializer for the value
         self.value_serializer = AvroSerializer(value_schema, self.schema_registry_client, None, {'auto.register.schemas': False})
+        ## The following order of parameters is required for confluent_kafka v1.9.0
+        # self.value_serializer = AvroSerializer(self.schema_registry_client, value_schema, None, {'auto.register.schemas': False})
         
         # Get the producer configuration
         self.producer_conf = self.getProducerConfiguration()

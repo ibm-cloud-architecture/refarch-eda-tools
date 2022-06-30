@@ -1,0 +1,1 @@
+{"type": "record", "name": "defaultKey", "namespace": "ibm.eda.default", "fields": [{"type": "int", "name": "key", "doc": "We expect any int as the event key"}], "doc": "Default Message's key Avro data schema"}
