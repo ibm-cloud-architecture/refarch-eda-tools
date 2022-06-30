@@ -23,6 +23,8 @@ class KafkaAvroConsumer:
         # to using the schema the message was serialized with (as the message travels with the schema id).
         # https://github.com/confluentinc/confluent-kafka-python/issues/834
         self.value_deserializer = AvroDeserializer(value_schema,self.schema_registry_client)
+        ## The following order of parameters is required for confluent_kafka v1.9.0
+        # self.value_deserializer = AvroDeserializer(self.schema_registry_client,value_schema)
 
         # Get the consumer configuration
         self.consumer_conf = self.getConsumerConfiguration(groupID, autocommit)

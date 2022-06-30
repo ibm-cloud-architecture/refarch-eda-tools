@@ -1,0 +1,1 @@
+{"type": "record", "name": "defaultValue", "namespace": "ibm.eda.default", "fields": [{"type": "string", "name": "message", "doc": "Any string"}], "doc": "Default Message's value Avro data schema"}
